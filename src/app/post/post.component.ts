@@ -9,11 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PostComponent implements OnInit {
 
   postTitle: string;
+  postUrl: string;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.postTitle = this.route.snapshot.paramMap.get('title');
+    this.postUrl = `/assets/posts/${this.postTitle}.md`;
   }
 
 }
