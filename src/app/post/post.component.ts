@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  private postTitle: string;
+  postTitle: string;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
