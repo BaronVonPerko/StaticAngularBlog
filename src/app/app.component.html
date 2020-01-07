@@ -9,11 +9,13 @@
    routerLinkActive="active">Example Post</a>
 <a routerLink="/post/2020-01-07-another-post"
    routerLinkActive="active">Another Post</a>
-<a routerLink="/page/about"
-   routerLinkActive="active">About</a>
-<a routerLink="/page/contact"
-   routerLinkActive="active">Contact</a>
 
 <hr>
+
+<a *ngFor="let page of pageArray"
+   [routerLink]="getPageLink(page.link)"
+   routerLinkActive="active">
+  {{page.title}}
+</a>
 
 <router-outlet></router-outlet>
