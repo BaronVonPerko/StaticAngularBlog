@@ -14,7 +14,10 @@ export class PageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.pageUrl = `/assets/pages/${this.router.url.replace('\/', '')}.md`;
+    this.route.params.subscribe(params => {
+      this.pageTitle = params.page;
+      this.pageUrl = `/assets/pages/${this.pageTitle}.md`;
+    });
   }
 
 }

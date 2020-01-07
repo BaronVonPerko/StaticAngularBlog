@@ -11,11 +11,13 @@ export class PostComponent implements OnInit {
   postTitle: string;
   postUrl: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.postTitle = this.route.snapshot.paramMap.get('title');
-    this.postUrl = `/assets/posts/${this.postTitle}.md`;
+    this.route.params.subscribe(params => {
+      this.postTitle = params.title;
+      this.postUrl = `/assets/posts/${this.postTitle}.md`;
+    });
   }
 
 }

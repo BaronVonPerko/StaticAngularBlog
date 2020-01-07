@@ -13,8 +13,8 @@ import { HomeComponent } from './custom-pages/home/home.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: PageComponent },
-  { path: 'post/:title', component: PostComponent }
+  { path: 'post/:title', component: PostComponent },
+  { path: 'page/:page', component: PageComponent },
 ];
 
 
