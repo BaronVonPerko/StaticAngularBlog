@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve & ngtw watch",
+    "start": "ng serve --port 4100 & ngtw watch",
     "build": "ngtw build && ng build",
     "test": "ng test",
     "lint": "ng lint",
