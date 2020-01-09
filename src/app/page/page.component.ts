@@ -10,13 +10,14 @@ export class PageComponent implements OnInit {
 
   pageTitle: string;
   pageUrl: string;
+  page: string;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.pageTitle = params.page;
-      this.pageUrl = `/assets/pages/${this.pageTitle}.md`;
+      this.page = params.page;
+      this.pageUrl = `/assets/pages/${this.page}.md`;
     });
   }
 

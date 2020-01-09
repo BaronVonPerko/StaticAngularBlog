@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const metaParser = require('markdown-yaml-metadata-parser');
 
 const pathToPages = path.join(__dirname, '../src/assets/pages');
 const ignoredFiles = [
-    ".gitignore"
+    'gitignore',
+    'pages.json'
 ];
 
 fs.readdir(pathToPages, (err, files) => {
@@ -13,10 +15,17 @@ fs.readdir(pathToPages, (err, files) => {
 
     files.filter(file => !file.includes(ignoredFiles))
         .forEach(file => {
-            fileArray.push({ filename: file });
+            const contents = fs.readFileSync(path.join(__dirname, `../src/assets/pages/${file}`), 'utf8');
+            const meta = metaParser(contents).metadata;
+
+            fileArray.push({ filename: file, inMenu: meta.inMenu, link: file.replace('.md', ''), title: meta.title });
         });
 
-    fs.writeFile(`${pathToPages}/pages.json`, JSON.stringify(fileArray), 'utf8', err => {
+    const data = {
+        Pages: fileArray
+    }
+
+    fs.writeFile(`${pathToPages}/pages.json`, JSON.stringify(data), 'utf8', err => {
         if (err) console.log(err);
     });
 });
