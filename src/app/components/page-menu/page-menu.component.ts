@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pages } from '../../../_assets/pages/pages.json';
 import Page from 'src/app/models/page.js';
+import { PageService } from 'src/app/services/page.service';
 
 
 @Component({
@@ -11,10 +11,10 @@ import Page from 'src/app/models/page.js';
 export class PageMenuComponent implements OnInit {
   menuPages: Page[] = [];
 
-  constructor() { }
+  constructor(private pageServices: PageService) { }
 
   ngOnInit() {
-    this.menuPages = Pages.filter(page => page.inMenu);
+    this.menuPages = this.pageServices.getMenuPages();
   }
 
   getPageLink(title) {

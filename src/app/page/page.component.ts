@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PageService } from '../services/page.service';
+import Page from '../models/page';
 
 @Component({
   selector: 'app-page',
@@ -8,16 +10,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PageComponent implements OnInit {
 
-  pageTitle: string;
+  page: Page;
   pageUrl: string;
-  page: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private pageService: PageService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.page = params.page;
-      this.pageUrl = `/_assets/pages/${this.page}.md`;
+      this.page = this.pageService.getPageDetails(params.page);
+      this.pageUrl = `/_assets/pages/${this.page.filename}`;
     });
   }
 
