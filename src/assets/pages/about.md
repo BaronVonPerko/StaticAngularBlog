@@ -1,6 +1,7 @@
 ---
 title: About Me
 inMenu: true
+menuTitle:
 ---
 !["alt text here"](assets/images/profile.jpg)
 

@@ -3,4 +3,5 @@ export default class Page {
     inMenu: boolean;
     link: string;
     title: string;
+    menuTitle: string;
 }

@@ -15,6 +15,7 @@ export class PageMenuComponent implements OnInit {
 
   ngOnInit() {
     this.menuPages = this.pageServices.getMenuPages();
+    console.log(this.menuPages);
   }
 
   getPageLink(title) {
