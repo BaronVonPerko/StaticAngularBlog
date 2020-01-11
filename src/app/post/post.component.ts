@@ -16,7 +16,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.postTitle = params.title;
-      this.postUrl = `/assets/posts/${this.postTitle}.md`;
+      this.postUrl = `/_assets/posts/${this.postTitle}.md`;
     });
   }
 

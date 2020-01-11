@@ -1,1 +1,7 @@
-<p>blog-archive works!</p>
+<h1>Latest Posts</h1>
+
+<div *ngFor="let post of posts">
+  <a [routerLink]="getPostLink(post)">
+    {{post.title}}
+  </a>
+</div>
