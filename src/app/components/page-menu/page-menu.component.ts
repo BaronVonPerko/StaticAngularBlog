@@ -9,14 +9,12 @@ import Page from 'src/app/models/page.js';
   styleUrls: ['./page-menu.component.css']
 })
 export class PageMenuComponent implements OnInit {
-  pageArray: Page[] = [];
   menuPages: Page[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    this.pageArray = Pages;
-    this.menuPages = this.pageArray.filter(page => page.inMenu);
+    this.menuPages = Pages.filter(page => page.inMenu);
   }
 
   getPageLink(title) {
