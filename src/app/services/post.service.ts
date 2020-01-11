@@ -20,4 +20,8 @@ export class PostService {
       return bTime - aTime;
     });
   }
+
+  getPostDetails(link: string): Post {
+    return this.getPosts().filter(post => post.link === link)[0];
+  }
 }
