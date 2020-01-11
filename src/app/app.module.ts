@@ -9,6 +9,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { HomeComponent } from './custom-pages/home/home.component';
+import { PageMenuComponent } from './components/page-menu/page-menu.component';
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     PostComponent,
     PageComponent,
     HomeComponent,
+    PageMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,6 @@
 
 <hr>
 
-<a *ngFor="let page of menuPages"
-   [routerLink]="getPageLink(page.link)"
-   routerLinkActive="active">
-  {{page.title}}
-</a>
+<app-page-menu></app-page-menu>
 
 <router-outlet></router-outlet>
