@@ -9,14 +9,16 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { HomeComponent } from './custom-pages/home/home.component';
-import { PageMenuComponent } from './components/page-menu/page-menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { BlogArchiveComponent } from './custom-pages/blog-archive/blog-archive.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'blog', component: BlogArchiveComponent },
   { path: 'post/:title', component: PostComponent },
   { path: ':page', component: PageComponent },
 ];
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     PostComponent,
     PageComponent,
     HomeComponent,
-    PageMenuComponent,
+    MenuComponent,
+    BlogArchiveComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,11 @@ import { PageService } from 'src/app/services/page.service';
 
 
 @Component({
-  selector: 'app-page-menu',
-  templateUrl: './page-menu.component.html',
-  styleUrls: ['./page-menu.component.css']
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class PageMenuComponent implements OnInit {
+export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
 
   constructor(private pageServices: PageService) { }
