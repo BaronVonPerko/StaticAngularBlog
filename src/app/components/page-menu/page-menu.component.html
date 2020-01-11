@@ -1,5 +1,14 @@
-<a *ngFor="let page of menuPages"
-   [routerLink]="getPageLink(page.link)"
-   routerLinkActive="active">
-  {{page.menuTitle}}
-</a>
+<div class="menu">
+  <header>
+    <a routerLink="/"
+       routerLinkActive="active">
+      <h1 class="text-3xl">ChrisPerko.net</h1>
+    </a>
+  </header>
+
+  <a *ngFor="let page of menuPages"
+     [routerLink]="getPageLink(page.link)"
+     routerLinkActive="active">
+    {{page.menuTitle}}
+  </a>
+</div>
