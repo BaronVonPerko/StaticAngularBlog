@@ -7,7 +7,7 @@
   </header>
 
   <a *ngFor="let page of menuPages"
-     [routerLink]="getPageLink(page.link)"
+     [routerLink]="page.link"
      routerLinkActive="active">
     {{page.menuTitle}}
   </a>

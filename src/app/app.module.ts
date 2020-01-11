@@ -18,7 +18,7 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'post/:title', component: PostComponent },
-  { path: 'page/:page', component: PageComponent },
+  { path: ':page', component: PageComponent },
 ];
 
 
