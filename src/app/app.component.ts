@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Pages } from '../_assets/pages/pages.json';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,9 @@ import { Pages } from '../_assets/pages/pages.json';
 export class AppComponent implements OnInit {
   title = 'StaticAngularBlog';
 
-  pageArray = [];
-  menuPages = [];
 
   ngOnInit() {
-    this.pageArray = Pages;
-    this.menuPages = this.pageArray.filter(page => page.inMenu);
   }
 
-  getPageLink(title) {
-    return `/page/${title}`;
-  }
+
 }
