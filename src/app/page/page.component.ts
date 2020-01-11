@@ -17,7 +17,7 @@ export class PageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.page = params.page;
-      this.pageUrl = `/assets/pages/${this.page}.md`;
+      this.pageUrl = `/_assets/pages/${this.page}.md`;
     });
   }
 

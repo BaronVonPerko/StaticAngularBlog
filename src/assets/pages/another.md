@@ -1,8 +1,7 @@
 ---
 title: Another Page
-inMenu: true
+inMenu: false
 ---
-
 # Another 
 
 ## something else

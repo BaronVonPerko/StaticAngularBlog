@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pages } from '../assets/pages/pages.json';
+import { Pages } from '../_assets/pages/pages.json';
 
 @Component({
   selector: 'app-root',
