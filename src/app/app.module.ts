@@ -10,6 +10,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { HomeComponent } from './custom-pages/home/home.component';
 import { PageMenuComponent } from './components/page-menu/page-menu.component';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 
 const appRoutes: Routes = [
@@ -32,7 +35,10 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    MarkdownModule.forRoot({ loader: HttpClient })
+    MarkdownModule.forRoot({ loader: HttpClient }),
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
+    LoadingBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
