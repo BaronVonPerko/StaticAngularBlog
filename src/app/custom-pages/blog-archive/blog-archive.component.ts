@@ -21,4 +21,8 @@ export class BlogArchiveComponent implements OnInit {
     return `/post/${post.link}`;
   }
 
+  getPostImage(post: Post) {
+    return `/assets/images/${post.image}`;
+  }
+
 }

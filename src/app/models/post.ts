@@ -3,4 +3,5 @@ export default class Post {
     link: string;
     title: string;
     date: string;
+    image: string;
 }

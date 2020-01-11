@@ -2,6 +2,7 @@
 
 <div *ngFor="let post of posts">
   <a [routerLink]="getPostLink(post)">
+    <img [src]="getPostImage(post)" />
     {{post.title}}
   </a>
 </div>
