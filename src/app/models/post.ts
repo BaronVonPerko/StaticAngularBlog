@@ -4,4 +4,6 @@ export default class Post {
     title: string;
     date: string;
     image: string;
+    categories: string;
+    tags: string;
 }

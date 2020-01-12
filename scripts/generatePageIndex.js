@@ -91,7 +91,9 @@ fs.readdir(pathToPosts, (err, files) => {
         link: file.replace('.md', ''),
         title: parsed.metadata.title,
         date: parsed.metadata.date,
-        image: parsed.metadata.image
+        image: parsed.metadata.image,
+        categories: parsed.metadata.categories,
+        tags: parsed.metadata.tags
       });
     });
 
