@@ -3,7 +3,7 @@ date: 2019-08-14
 title: Changing the Icon and Tooltip in a DevExpress Grid
 image: devexpress.png
 categories:
-tags:
+tags: devexpress
 ---
 Using tools such as DevExpress can greatly speed up the process of developing a web application. An example of this is the DevExpress data grid. By simply adding an allowDeleting property, the grid will automatically add a Delete button that will make a DELETE http request to the resource that the data grid is displaying. A drawback, however, is if you want to customize this icon and the tooltip associated with it.
 
