@@ -2,26 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## Development server
+## What is this?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is a custom built static website for ChrisPerko.net, my blog and personal website.
 
-## Code scaffolding
+## Development Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install dependencies:
+```bash
+npm install
+```
 
-## Build
+Index the pages and posts:
+```bash
+node ./scripts/generatePageIndex.js
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run the server
+```bash
+npm start
+```
 
-## Running unit tests
+Open your browser to the development server:
+*localhost:4100*
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Use It
+Feel free to use this code however you wish.  Create your own blog, and style it how ever you like!
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
