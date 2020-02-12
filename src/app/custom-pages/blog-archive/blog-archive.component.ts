@@ -9,7 +9,7 @@ import Post from 'src/app/models/post';
 })
 export class BlogArchiveComponent implements OnInit {
 
-  private posts: Post[];
+  posts: Post[];
 
   constructor(private postService: PostService) { }
 
