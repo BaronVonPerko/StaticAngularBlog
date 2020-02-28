@@ -55,7 +55,8 @@ fs.readdir(pathToPages, (err, files) => {
         inMenu: parsed.metadata.inMenu,
         link: file.replace('.md', ''),
         title: parsed.metadata.title,
-        menuTitle: parsed.metadata.menuTitle ? parsed.metadata.menuTitle : parsed.metadata.title
+        menuTitle: parsed.metadata.menuTitle ? parsed.metadata.menuTitle : parsed.metadata.title,
+        icon: parsed.metadata.icon
       });
     });
 

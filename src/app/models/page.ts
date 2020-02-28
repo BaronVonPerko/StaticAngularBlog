@@ -4,4 +4,5 @@ export default class Page {
     link: string;
     title: string;
     menuTitle: string;
+    icon?: string;
 }
