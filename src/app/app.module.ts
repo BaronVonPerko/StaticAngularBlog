@@ -20,7 +20,7 @@ import { MenuItemComponent } from './components/menu/menu-item/menu-item.compone
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: BlogArchiveComponent },
-  { path: 'post/:title', component: PostComponent },
+  { path: 'blog/post/:title', component: PostComponent },
   { path: ':page', component: PageComponent },
 ];
 
