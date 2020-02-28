@@ -1,5 +1,5 @@
 export default class Page {
-    filename: string;
+    filename?: string;
     inMenu: boolean;
     link: string;
     title: string;

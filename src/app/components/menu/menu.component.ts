@@ -13,7 +13,16 @@ export class MenuComponent implements OnInit {
   constructor(private pageServices: PageService) { }
 
   ngOnInit() {
-    this.menuPages = this.pageServices.getMenuPages();
+
+    const blogPage: Page = {
+      inMenu: true,
+      link: '/blog',
+      title: 'Blog',
+      menuTitle: 'Blog'
+    };
+
+    this.menuPages = [...this.pageServices.getMenuPages(), blogPage];
+
   }
 
 }

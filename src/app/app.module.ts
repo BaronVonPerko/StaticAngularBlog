@@ -14,6 +14,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { BlogArchiveComponent } from './custom-pages/blog-archive/blog-archive.component';
+import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     HomeComponent,
     MenuComponent,
     BlogArchiveComponent,
+    MenuItemComponent,
   ],
   imports: [
     BrowserModule,
