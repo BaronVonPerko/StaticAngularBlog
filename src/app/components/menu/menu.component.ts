@@ -18,7 +18,8 @@ export class MenuComponent implements OnInit {
       inMenu: true,
       link: '/blog',
       title: 'Blog',
-      menuTitle: 'Blog'
+      menuTitle: 'Blog',
+      icon: 'md-collection'
     };
 
     this.menuPages = [...this.pageServices.getMenuPages(), blogPage];
