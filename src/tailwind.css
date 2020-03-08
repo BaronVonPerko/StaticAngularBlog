@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+a {
+    @apply text-teal-600 underline;
+}

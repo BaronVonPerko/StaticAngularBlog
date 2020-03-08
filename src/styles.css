@@ -28174,6 +28174,11 @@ video {
   transition-duration: 1000ms;
 }
 
+a {
+  color: #047481;
+  text-decoration: underline;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
