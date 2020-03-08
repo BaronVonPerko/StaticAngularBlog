@@ -12,8 +12,36 @@ h1 {
     @apply text-3xl leading-9 font-extrabold tracking-tight mb-16;
 }
 
+h2 {
+    @apply text-xl leading-9 font-extrabold tracking-tight my-4;
+}
+
 @screen sm {
     h1 {
         @apply text-4xl leading-10;
     }
+
+    h2 {
+        @apply text-2xl leading-10;
+    }
+}
+
+.content {
+    @apply max-w-4xl mx-auto;
+}
+
+.content p {
+    @apply my-4;
+}
+
+.content img {
+    @apply mx-auto my-8;
+}
+
+.content h2 {
+    @apply mt-16;
+}
+
+.content ul li {
+    @apply list-disc;
 }
