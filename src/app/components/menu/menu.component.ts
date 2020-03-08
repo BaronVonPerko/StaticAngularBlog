@@ -9,6 +9,7 @@ import { PageService } from 'src/app/services/page.service';
 })
 export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
+  sidebarOpen = false;
 
   constructor(private pageServices: PageService) { }
 
@@ -24,6 +25,10 @@ export class MenuComponent implements OnInit {
 
     this.menuPages = [...this.pageServices.getMenuPages(), blogPage];
 
+  }
+
+  openSidebar() {
+    this.sidebarOpen = true;
   }
 
 }
