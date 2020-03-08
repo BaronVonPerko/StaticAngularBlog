@@ -4,8 +4,7 @@ import Post from 'src/app/models/post';
 
 @Component({
   selector: 'app-blog-archive',
-  templateUrl: './blog-archive.component.html',
-  styleUrls: ['./blog-archive.component.css']
+  templateUrl: './blog-archive.component.html'
 })
 export class BlogArchiveComponent implements OnInit {
 
@@ -15,14 +14,6 @@ export class BlogArchiveComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.getLatestPosts();
-  }
-
-  getPostLink(post: Post) {
-    return `/blog/post/${post.link}`;
-  }
-
-  getPostImage(post: Post) {
-    return `/assets/images/${post.image}`;
   }
 
 }
