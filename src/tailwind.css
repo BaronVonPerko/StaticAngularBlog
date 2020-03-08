@@ -7,3 +7,13 @@
 a {
     @apply text-teal-600 underline;
 }
+
+h1 {
+    @apply text-3xl leading-9 font-extrabold tracking-tight mb-16;
+}
+
+@screen sm {
+    h1 {
+        @apply text-4xl leading-10;
+    }
+}
