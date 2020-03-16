@@ -1,0 +1,5 @@
+<h1>Posts for Tag: <span class="text-indigo-500">{{tag}}</span></h1>
+
+<app-post-box *ngFor="let post of posts"
+                [highlightedTag]="tag"
+                [post]="post"></app-post-box>

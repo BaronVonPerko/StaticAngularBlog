@@ -6,9 +6,10 @@ const filename = process.argv[2];
 const filePath = path.join(__dirname, `../src/assets/pages/${filename}.md`);
 
 const meta = `---
-title: 
+title:
 inMenu: false
-menuTitle: 
+menuTitle:
+icon:
 ---`;
 
 fs.writeFile(filePath, meta, 'utf8', err => {

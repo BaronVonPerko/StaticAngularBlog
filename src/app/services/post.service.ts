@@ -21,6 +21,10 @@ export class PostService {
     });
   }
 
+  getPostsForTag(tag: string): Post[] {
+    return this.getLatestPosts().filter(post => post.tags.indexOf(tag) > -1);
+  }
+
   getPostDetails(link: string): Post {
     return this.getPosts().filter(post => post.link === link)[0];
   }

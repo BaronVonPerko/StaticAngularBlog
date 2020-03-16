@@ -6,15 +6,29 @@ import { PageService } from 'src/app/services/page.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
+  sidebarOpen = false;
 
   constructor(private pageServices: PageService) { }
 
   ngOnInit() {
-    this.menuPages = this.pageServices.getMenuPages();
+
+    const blogPage: Page = {
+      inMenu: true,
+      link: '/blog',
+      title: 'Blog',
+      menuTitle: 'Blog',
+      icon: 'md-collection'
+    };
+
+    this.menuPages = [...this.pageServices.getMenuPages(), blogPage];
+
+  }
+
+  openSidebar() {
+    this.sidebarOpen = true;
   }
 
 }

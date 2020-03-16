@@ -1,5 +1,9 @@
-<h1 class="title">{{post.title}}</h1>
-
 <div class="content">
-  <markdown [src]="this.postUrl"></markdown>
+  <h1>
+    {{post.title}}
+    <app-tags-list [post]="post"></app-tags-list>
+  </h1>
+
+
+  <markdown class="" [src]="this.postUrl"></markdown>
 </div>
