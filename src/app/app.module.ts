@@ -15,13 +15,15 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { BlogArchiveComponent } from './custom-pages/blog-archive/blog-archive.component';
 import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
-import { PostBoxComponent } from './custom-pages/blog-archive/post-box/post-box.component';
 import { TagsListComponent } from './components/tags-list/tags-list.component';
+import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.component';
+import { PostBoxComponent } from './components/post-box/post-box.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: BlogArchiveComponent },
+  { path: 'blog/tag/:tag', component: TagArchiveComponent },
   { path: 'blog/post/:title', component: PostComponent },
   { path: ':page', component: PageComponent },
 ];
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     MenuItemComponent,
     PostBoxComponent,
     TagsListComponent,
+    TagArchiveComponent,
   ],
   imports: [
     BrowserModule,

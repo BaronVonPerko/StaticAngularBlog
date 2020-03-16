@@ -9,6 +9,7 @@ import { PostService } from 'src/app/services/post.service';
 export class PostBoxComponent implements OnInit {
 
   @Input() post: Post;
+  @Input() highlightedTag: string;
 
   constructor(private postService: PostService) { }
 
