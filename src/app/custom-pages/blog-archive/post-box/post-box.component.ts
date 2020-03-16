@@ -8,10 +8,12 @@ import Post from 'src/app/models/post';
 export class PostBoxComponent implements OnInit {
 
   @Input() post: Post;
+  tags: string[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.tags = this.post.tags.split(',');
   }
 
   get postLink() {
