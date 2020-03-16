@@ -16,6 +16,7 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { BlogArchiveComponent } from './custom-pages/blog-archive/blog-archive.component';
 import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
 import { PostBoxComponent } from './custom-pages/blog-archive/post-box/post-box.component';
+import { TagsListComponent } from './components/tags-list/tags-list.component';
 
 
 const appRoutes: Routes = [
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     BlogArchiveComponent,
     MenuItemComponent,
     PostBoxComponent,
+    TagsListComponent,
   ],
   imports: [
     BrowserModule,

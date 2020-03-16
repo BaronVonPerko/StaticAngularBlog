@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import Post from 'src/app/models/post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post-box',
@@ -8,13 +9,10 @@ import Post from 'src/app/models/post';
 export class PostBoxComponent implements OnInit {
 
   @Input() post: Post;
-  tags: string[];
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
-  ngOnInit(): void {
-    this.tags = this.post.tags.split(',');
-  }
+  ngOnInit(): void { }
 
   get postLink() {
     return `/blog/post/${this.post.link}`;
