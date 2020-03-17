@@ -18,6 +18,7 @@ import { MenuItemComponent } from './components/menu/menu-item/menu-item.compone
 import { TagsListComponent } from './components/tags-list/tags-list.component';
 import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.component';
 import { PostBoxComponent } from './components/post-box/post-box.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     PostBoxComponent,
     TagsListComponent,
     TagArchiveComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

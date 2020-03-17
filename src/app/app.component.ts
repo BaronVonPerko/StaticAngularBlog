@@ -7,11 +7,16 @@ import { MenuComponent } from './components/menu/menu.component';
 })
 export class AppComponent implements OnInit {
   @ViewChild(MenuComponent, {static: false}) theMenu;
+  searchString = '';
 
   ngOnInit() {
   }
 
   openSidebar() {
     this.theMenu.openSidebar();
+  }
+
+  onSearchChanged(searchString: string) {
+    this.searchString = searchString;
   }
 }
