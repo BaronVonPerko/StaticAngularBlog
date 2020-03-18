@@ -23,9 +23,4 @@ export class PostBoxComponent implements OnInit {
     return `/assets/images/${this.post.image}`;
   }
 
-  get postDate() {
-    const datetime = new Date(this.post.date);
-    return `${datetime.getFullYear()}-${datetime.getMonth() + 1}-${datetime.getDate() + 1}`;
-  }
-
 }
