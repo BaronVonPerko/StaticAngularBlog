@@ -1,8 +1,8 @@
-<p class="mt-3 text-xs leading-7">
-    <a [href]="getTagHref(tag)" 
-        class="text-xs inline-block mr-2 mb-2 bg-gray-200 rounded-md p-2 text-gray-700 font-medium italic hover:underline cursor-pointer" 
-        [ngClass]="{'text-indigo-500 font-extrabold' : tag === highlightedTag}"
-        *ngFor="let tag of tags">
+<div class="flex-shrink-0 flex">
+    <a *ngFor="let tag of tags"
+       [href]="getTagHref(tag)"
+       [ngClass]="tag === highlightedTag ? 'text-indigo-200 bg-indigo-800 font-bold' : 'bg-indigo-100 text-indigo-800 font-semibold'"
+       class="mr-2 px-2 inline-flex text-xs leading-5 rounded-full">
         #{{tag}}
     </a>
-  </p>
+</div>
