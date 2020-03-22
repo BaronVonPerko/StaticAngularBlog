@@ -1,9 +1,21 @@
-<h1>Hello!</h1>
-<p>
-  I'm Chris. I'm a web developer in Atlanta, Georgia! When I'm not coding,
-  I'm just a geek who loves to travel, drink good beer, and watch movies.
-</p>
-<p>
-  I work full-time as a Lead Software Engineer at Emory University, but also do
-  contract work on the side. <a href="/contact">Want to work with me?</a>
-</p>
+<div class="">
+  <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+    <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+      Welcome to Perko.DEV!
+      <br />
+      <span class="text-indigo-600">Built with Angular and Tailwind.</span>
+    </h2>
+    <div class="mt-8 flex">
+      <div class="inline-flex rounded-md shadow">
+        <a [routerLink]="'/blog'" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+          Read my blog
+        </a>
+      </div>
+      <div class="ml-3 inline-flex">
+        <a [routerLink]="'/about'" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out">
+          Learn more about me
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
