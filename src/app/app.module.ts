@@ -21,15 +21,6 @@ import { PostBoxComponent } from './components/post-box/post-box.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'blog', component: BlogArchiveComponent },
-  { path: 'blog/tag/:tag', component: TagArchiveComponent },
-  { path: 'blog/post/:title', component: PostComponent },
-  { path: ':page', component: PageComponent },
-];
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +38,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     LoadingBarHttpClientModule,
