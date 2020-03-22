@@ -38,6 +38,10 @@ h2 {
     @apply mx-auto my-8;
 }
 
+.page-content img {
+    @apply max-w-sm;
+}
+
 .content h2 {
     @apply mt-16;
 }
