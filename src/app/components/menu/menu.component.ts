@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Page from 'src/app/models/page.js';
 import { PageService } from 'src/app/services/page.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
   sidebarOpen = false;
 
-  constructor(private pageServices: PageService) { }
+  constructor(private pageServices: PageService, private router: Router) { }
 
   ngOnInit() {
 
@@ -29,6 +30,10 @@ export class MenuComponent implements OnInit {
 
   openSidebar() {
     this.sidebarOpen = true;
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/');
   }
 
 }
