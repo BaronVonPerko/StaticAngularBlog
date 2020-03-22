@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
       icon: 'md-collection'
     };
 
-    this.menuPages = [...this.pageServices.getMenuPages(), blogPage];
+    this.menuPages = [blogPage, ...this.pageServices.getMenuPages()];
 
   }
 
