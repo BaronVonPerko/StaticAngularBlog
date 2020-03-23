@@ -17,11 +17,5 @@
         {{projectTypeSelected.title}}
         <br />
         <span class="text-indigo-600">Tell us more!</span>
-    </h2>
-    
-    <app-calculator-choice 
-        *ngFor="let choice of projectTypeChoices" 
-        [choice]="choice"
-        (choiceSelected)="projectTypeSelected = $event">
-    </app-calculator-choice>    
+    </h2>   
 </div>
