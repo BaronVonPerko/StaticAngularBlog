@@ -1,7 +1,27 @@
-<h2 id="get-started" class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-    Let's get started!
-    <br />
-    <span class="text-indigo-600">What kind of project are you wanting to build?</span>
-</h2>
+<div *ngIf="!projectTypeSelected">
+    <h2 id="get-started" class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 mb-8">
+        Let's get started!
+        <br />
+        <span class="text-indigo-600">What kind of project are you wanting to build?</span>
+    </h2>
+    
+    <app-calculator-choice 
+        *ngFor="let choice of projectTypeChoices" 
+        [choice]="choice"
+        (choiceSelected)="projectTypeSelected = $event">
+    </app-calculator-choice>    
+</div>
 
-<app-calculator-choice *ngFor="let choice of projectTypeChoices" [choice]="choice"></app-calculator-choice>
+<div *ngIf="projectTypeSelected">
+    <h2 id="get-started" class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 mb-8">
+        {{projectTypeSelected.title}}
+        <br />
+        <span class="text-indigo-600">Tell us more!</span>
+    </h2>
+    
+    <app-calculator-choice 
+        *ngFor="let choice of projectTypeChoices" 
+        [choice]="choice"
+        (choiceSelected)="projectTypeSelected = $event">
+    </app-calculator-choice>    
+</div>

@@ -8,11 +8,12 @@
                 <p>
                     {{choice.details}}
                 </p>
-                <p *ngIf="choice.price" class="mt-4 text-sm leading-5 text-gray-400">${{choice.price}}</p>
+                <p *ngIf="choice.price" class="mt-4 text-sm leading-5 text-gray-400">{{choice.pricePrefix}} ${{choice.price}}</p>
             </div>
             <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
                 <span class="inline-flex rounded-md shadow-sm">
                     <button type="button"
+                            (click)="select()"
                             class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
                         Select
                     </button>
