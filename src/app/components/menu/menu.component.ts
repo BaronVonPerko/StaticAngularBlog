@@ -24,7 +24,15 @@ export class MenuComponent implements OnInit {
       icon: 'md-collection'
     };
 
-    this.menuPages = [blogPage, ...this.pageServices.getMenuPages()];
+    const workWithMePage: Page = {
+      inMenu: true,
+      link: '/work-with-me',
+      title: 'Work With Me',
+      menuTitle: 'Work With Me',
+      icon: 'md-briefcase'
+    };
+
+    this.menuPages = [blogPage, workWithMePage, ...this.pageServices.getMenuPages()];
 
   }
 
