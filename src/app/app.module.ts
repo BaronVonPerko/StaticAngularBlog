@@ -20,6 +20,8 @@ import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.comp
 import { PostBoxComponent } from './components/post-box/post-box.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
+import { CalculatorComponent } from './custom-pages/work-with-me/calculator/calculator.component';
+import { CalculatorChoiceComponent } from './custom-pages/work-with-me/calculator/calculator-choice/calculator-choice.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.co
     TagArchiveComponent,
     SearchResultsComponent,
     WorkWithMeComponent,
+    CalculatorComponent,
+    CalculatorChoiceComponent,
   ],
   imports: [
     BrowserModule,
