@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
-import { Routes, RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
@@ -20,8 +19,8 @@ import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.comp
 import { PostBoxComponent } from './components/post-box/post-box.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
-import { CalculatorComponent } from './custom-pages/work-with-me/calculator/calculator.component';
-import { CalculatorChoiceComponent } from './custom-pages/work-with-me/calculator/calculator-choice/calculator-choice.component';
+import { ProjectTypeChooserComponent } from './custom-pages/work-with-me/project-type-chooser/project-type-chooser.component';
+import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-chooser/project-type/project-type.component';
 
 
 @NgModule({
@@ -38,8 +37,8 @@ import { CalculatorChoiceComponent } from './custom-pages/work-with-me/calculato
     TagArchiveComponent,
     SearchResultsComponent,
     WorkWithMeComponent,
-    CalculatorComponent,
-    CalculatorChoiceComponent,
+    ProjectTypeChooserComponent,
+    ProjectTypeComponent,
   ],
   imports: [
     BrowserModule,

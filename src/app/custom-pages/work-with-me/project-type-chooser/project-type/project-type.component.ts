@@ -2,10 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import CalculatorChoice from 'src/app/models/calculator-choice';
 
 @Component({
-  selector: 'app-calculator-choice',
-  templateUrl: './calculator-choice.component.html',
+  selector: 'app-project-type',
+  templateUrl: './project-type.component.html',
 })
-export class CalculatorChoiceComponent implements OnInit {
+export class ProjectTypeComponent implements OnInit {
   @Input() choice: CalculatorChoice;
   @Output() choiceSelected: EventEmitter<CalculatorChoice> = new EventEmitter();
 

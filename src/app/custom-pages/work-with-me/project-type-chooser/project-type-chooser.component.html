@@ -5,11 +5,11 @@
         <span class="text-indigo-600">What kind of project are you wanting to build?</span>
     </h2>
     
-    <app-calculator-choice 
+    <app-project-type 
         *ngFor="let choice of projectTypeChoices" 
         [choice]="choice"
         (choiceSelected)="projectTypeSelected = $event">
-    </app-calculator-choice>    
+    </app-project-type>    
 </div>
 
 <div *ngIf="projectTypeSelected">

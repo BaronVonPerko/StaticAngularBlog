@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import CalculatorChoice from 'src/app/models/calculator-choice';
+import ProjectType from 'src/app/models/project-type';
 
 @Component({
-  selector: 'app-calculator',
-  templateUrl: './calculator.component.html',
+  selector: 'app-project-type-chooser',
+  templateUrl: './project-type-chooser.component.html',
 })
-export class CalculatorComponent implements OnInit {
+export class ProjectTypeChooserComponent implements OnInit {
 
-  projectTypeChoices: CalculatorChoice[] = [];
-  projectTypeSelected: CalculatorChoice;
+  projectTypeChoices: ProjectType[] = [];
+  projectTypeSelected: ProjectType;
 
   constructor() { }
 
@@ -18,20 +18,14 @@ export class CalculatorComponent implements OnInit {
         title: 'WordPress',
         // tslint:disable-next-line: max-line-length
         details: 'WordPress powers 35% of the web!  It is perfect for blogs or websites that are updated regularly.  Choose this if you want to have control over updating content and adding new pages yourself.',
-        price: 600,
-        pricePrefix: 'Starting at',
       }, {
         title: 'Static Website',
         // tslint:disable-next-line: max-line-length
         details: 'Static websites are lightweight, fast, and lend themselves to cheap hosting solutions.  Choose this if you are not planning to update your website often.  Updates would require a developer to modify and upload changes to the server.',
-        price: 350,
-        pricePrefix: 'Starting at',
       }, {
         title: 'Custom Web Application',
         // tslint:disable-next-line: max-line-length
         details: 'Web applications can vary from simple to extremely complex apps.  If you need a custom solution for a problem, this is the way to go!',
-        price: 3900,
-        pricePrefix: 'Starting at',
       });
   }
 
