@@ -1,13 +1,13 @@
-<div class="" *ngIf="!calculatorShown; else calculator">
+<div class="" *ngIf="!projectChooserShown; else projectChooser">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
         <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
             Ready to get your idea off the ground?
             <br />
-            <span class="text-indigo-600">Try our pricing calculator!</span>
+            <span class="text-indigo-600">Tell me more about your project!</span>
         </h2>
         <div class="mt-8 flex">
             <div class="inline-flex rounded-md shadow">
-                <a (click)="calculatorShown = true"
+                <a (click)="projectChooserShown = true"
                    class="bg-indigo-600 hover:bg-indigo-500 cursor-pointer inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
                     Get started
                 </a>
@@ -22,6 +22,6 @@
     </div>
 </div>
 
-<ng-template #calculator class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
+<ng-template #projectChooser class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
     <app-calculator></app-calculator>
 </ng-template>

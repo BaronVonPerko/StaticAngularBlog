@@ -5,7 +5,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './work-with-me.component.html',
 })
 export class WorkWithMeComponent implements OnInit {
-  calculatorShown = false;
+  projectChooserShown = false;
 
   constructor() { }
 
