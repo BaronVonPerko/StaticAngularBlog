@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import CalculatorChoice from 'src/app/models/calculator-choice';
+import CalculatorChoice from 'src/app/models/project-type';
 
 @Component({
   selector: 'app-project-type',
