@@ -11,11 +11,12 @@ export class PageComponent implements OnInit {
 
   page: Page;
 
-  constructor(private route: ActivatedRoute, private router: Router, private pageService: PageService) { }
+  constructor(private route: ActivatedRoute, private pageService: PageService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.pageService.getPageDetails(params.page).subscribe(details => this.page = details);
+      this.pageService.getPageDetails(params.page)
+        .subscribe(details => this.page = details);
     });
   }
 

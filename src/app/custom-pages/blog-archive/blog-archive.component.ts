@@ -13,7 +13,8 @@ export class BlogArchiveComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.postService.getLatestPosts().subscribe(posts => this.posts = posts);
+    this.postService.getLatestPosts()
+      .subscribe(posts => this.posts = posts);
   }
 
 }
