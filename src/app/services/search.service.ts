@@ -10,15 +10,19 @@ export class SearchService {
   constructor(private postService: PostService) { }
 
   search(searchString: string) {
-    const posts = this.postService.getLatestPosts();
+    let posts: Post[];
     const results: Post[] = [];
 
+    this.postService.getLatestPosts().subscribe(latestPosts => posts = latestPosts);
+
     posts.forEach(post => {
-      if (post.tags.indexOf(searchString) > -1 || post.title.indexOf(searchString) > -1) {
+      if (post.tags.toLowerCase().indexOf(searchString.toLowerCase()) > -1 
+      || post.title.toLowerCase().indexOf(searchString.toLowerCase()) > -1) {
         results.push(post);
       }
     });
 
     return results;
+
   }
 }

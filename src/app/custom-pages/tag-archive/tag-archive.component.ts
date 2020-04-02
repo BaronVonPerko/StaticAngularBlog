@@ -18,7 +18,7 @@ export class TagArchiveComponent implements OnInit {
       this.tag = params.tag;
     });
 
-    this.posts = this.postService.getPostsForTag(this.tag);
+    this.postService.getPostsForTag(this.tag).subscribe(posts => this.posts = posts);
   }
 
 }
