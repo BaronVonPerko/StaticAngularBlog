@@ -32,8 +32,9 @@ export class MenuComponent implements OnInit {
       icon: 'md-briefcase'
     };
 
-    this.menuPages = [blogPage, workWithMePage, ...this.pageServices.getMenuPages()];
-
+    this.pageServices.getMenuPages().subscribe(pages => {
+      this.menuPages = [blogPage, workWithMePage, ...pages];
+    });
   }
 
   openSidebar() {

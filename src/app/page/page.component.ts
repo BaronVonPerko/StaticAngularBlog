@@ -15,7 +15,7 @@ export class PageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.page = this.pageService.getPageDetails(params.page);
+      this.pageService.getPageDetails(params.page).subscribe(details => this.page = details);
     });
   }
 
