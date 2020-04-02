@@ -15,7 +15,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   constructor(private searchService: SearchService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.results = this.searchService.search(changes.searchString.currentValue);
+    this.searchService.search(changes.searchString.currentValue)
+      .subscribe(searchResults => this.results = searchResults);
   }
 
   ngOnInit(): void {

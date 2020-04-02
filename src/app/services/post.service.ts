@@ -32,7 +32,7 @@ export class PostService {
 
   getPostDetails(link: string): Observable<Post> {
     return new Observable(subscriber => {
-      subscriber.next(Posts.filter(post => post.link === link)[0])
+      subscriber.next(Posts.filter(post => post.link === link)[0]);
     });
   }
 }
