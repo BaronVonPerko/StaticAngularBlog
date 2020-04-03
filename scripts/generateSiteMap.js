@@ -36,6 +36,9 @@ let indexSitemap = builder.create('root')
     .ele('lastmod', null, date).up().up()
     .ele('sitemap')
     .ele('loc', null, 'https://chrisperko.net/page-sitemap.xml').up()
+    .ele('lastmod', null, date).up().up()
+    .ele('sitemap')
+    .ele('loc', null, 'https://chrisperko.net/tag-sitemap.xml').up()
     .ele('lastmod', null, date)
     .end({ pretty: true });
 
@@ -61,3 +64,5 @@ fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
         if (err) console.log(err);
     });
 });
+
+// example tag url http://localhost:4100/blog/tag/devexpress

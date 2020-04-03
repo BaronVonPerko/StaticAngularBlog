@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node ./scripts/generatePageIndex.js && ng serve --port 4100",
+    "start": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js && ng serve --port 4100",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

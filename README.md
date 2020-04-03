@@ -13,15 +13,20 @@ Install dependencies:
 npm install
 ```
 
-Index the pages and posts:
-```bash
-node ./scripts/generatePageIndex.js
-```
-
 Run the server
 ```bash
 npm start
 ```
+
+Running the server will run the scripts to generate the sitemaps and page indexes.
+If you need to run these individually:
+
+```bash
+node ./scripts/generatePageIndex.js
+node ./scripts/generateSiteMap.js
+```
+
+---
 
 Open your browser to the development server:
 *localhost:4100*
