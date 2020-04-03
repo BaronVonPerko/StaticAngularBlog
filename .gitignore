@@ -40,7 +40,6 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-sitemap.xml
 
 # System Files
 .DS_Store
