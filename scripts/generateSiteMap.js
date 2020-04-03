@@ -51,13 +51,35 @@ fs.writeFile(`${baseSitemapDir}/sitemap.xml`, indexSitemap, 'utf8', err => {
 fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
     if (err) console.error(err);
 
-    let postSitemap = builder.create('root')
+    let pageSitemap = builder.create('root')
         .ele('urlset', { 'xmlns': baseUrl });
 
     const json = JSON.parse(data);
     json.Pages.forEach(page => {
-        postSitemap.ele('url')
+        pageSitemap.ele('url')
             .ele('loc', null, `${baseUrl}${page.link}`);
+    });
+
+    pageSitemap.end({ pretty: true });
+
+    fs.writeFile(`${baseSitemapDir}/page-sitemap.xml`, pageSitemap, 'utf8', err => {
+        if (err) console.log(err);
+    });
+});
+
+
+// build the post sitemap
+fs.readFile(`${pathToCompiledPosts}/posts.json`, (err, data) => {
+    if (err) console.error(err);
+
+    let postSitemap = builder.create('root')
+        .ele('urlset', { 'xmlns': baseUrl });
+
+    const json = JSON.parse(data);
+    json.Posts.forEach(post => {
+        postSitemap.ele('url')
+            .ele('loc', null, `${baseUrl}${post.link}`).up()
+            .ele('lastmod', null, new Date(post.date).toISOString());
     });
 
     postSitemap.end({ pretty: true });
@@ -66,10 +88,6 @@ fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
         if (err) console.log(err);
     });
 });
-
-
-// build the post sitemap
-
 
 // build the tag sitemap
 fs.readFile(`${pathToCompiledPosts}/posts.json`, (err, data) => {
