@@ -46,6 +46,8 @@ fs.writeFile(`${baseSitemapDir}/sitemap.xml`, indexSitemap, 'utf8', err => {
     if (err) console.log(err);
 });
 
+
+// build the page sitemap
 fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
     if (err) console.error(err);
 
@@ -65,4 +67,32 @@ fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
     });
 });
 
-// example tag url http://localhost:4100/blog/tag/devexpress
+
+// build the post sitemap
+
+
+// build the tag sitemap
+fs.readFile(`${pathToCompiledPosts}/posts.json`, (err, data) => {
+    if (err) console.error(err);
+
+    let tagSitemap = builder.create('root')
+        .ele('urlset', { 'xmlns': baseUrl });
+
+    const json = JSON.parse(data);
+    let tags = [];
+    json.Posts.forEach(post => {
+        tags.push(...post.tags.split(','));
+    });
+
+    [...new Set(tags)].forEach(tag => {
+        tagSitemap.ele('url')
+            .ele('loc', null, `${baseUrl}blog/tag/${tag}`).up()
+            .ele('lastmod', null, date);
+    });
+
+    tagSitemap.end({ pretty: true });
+
+    fs.writeFile(`${baseSitemapDir}/tag-sitemap.xml`, tagSitemap, 'utf8', err => {
+        if (err) console.log(err);
+    });
+});

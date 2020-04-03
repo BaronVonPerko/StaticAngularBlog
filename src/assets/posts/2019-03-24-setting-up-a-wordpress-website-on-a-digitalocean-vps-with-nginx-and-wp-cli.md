@@ -3,7 +3,7 @@ date: 2019-03-24
 title: Setting Up a WordPress Website on a DigitalOcean VPS with NGinX and WP-CLI
 image: digitalocean.png
 categories: WordPress
-tags: digitalocean,do,droplet,wordpress,wp-cli
+tags: digitalocean,droplet,wordpress,wp-cli
 ---
 To a lot of developers, making the switch from a one-click shared host to a custom VPS can be scary. With a VPS, you are your own support, yet you get total control over your server. Let's set up a simple WordPress site on a LEMP (Linux, NginX, MySQL, PHP) DigitalOcean droplet!
 
