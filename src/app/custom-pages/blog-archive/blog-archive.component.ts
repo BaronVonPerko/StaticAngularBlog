@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import Post from 'src/app/models/post';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-blog-archive',
@@ -8,13 +9,12 @@ import Post from 'src/app/models/post';
 })
 export class BlogArchiveComponent implements OnInit {
 
-  posts: Post[];
+  posts$: Observable<Post[]>;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.postService.getLatestPosts()
-      .subscribe(posts => this.posts = posts);
+    this.posts$ = this.postService.getLatestPosts();
   }
 
 }
