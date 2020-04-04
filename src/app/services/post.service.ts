@@ -9,9 +9,11 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
+  private postsPerPage = 5;
+
   constructor() { }
 
-  getLatestPosts(): Observable<Post[]> {
+  getLatestPosts(page: number = 0): Observable<Post[]> {
     return new Observable(subscriber => {
 
       const posts = Posts.sort((a: Post, b: Post) => {
@@ -20,12 +22,17 @@ export class PostService {
         return bTime - aTime;
       });
 
-      subscriber.next(posts);
+      subscriber.next(
+        posts.slice(
+          page * this.postsPerPage,
+          (page * this.postsPerPage) + this.postsPerPage
+        )
+      );
     });
   }
 
-  getPostsForTag(tag: string): Observable<Post[]> {
-    return this.getLatestPosts().pipe(
+  getPostsForTag(tag: string, page: number = 0): Observable<Post[]> {
+    return this.getLatestPosts(page).pipe(
       map(posts => posts.filter(post => post.tags.indexOf(tag) > -1))
     );
   }
