@@ -12,12 +12,14 @@ import { map } from 'rxjs/operators';
 export class BlogArchiveComponent implements OnInit {
 
   posts$: Observable<Post[]>;
+  page = 0;
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.posts$ = this.postService.getLatestPosts(params.page);
+      this.page = Number(params.page || 0);
+      this.posts$ = this.postService.getLatestPosts(this.page);
     });
   }
 
