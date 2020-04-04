@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import Post from 'src/app/models/post';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog-archive',
@@ -11,10 +13,12 @@ export class BlogArchiveComponent implements OnInit {
 
   posts$: Observable<Post[]>;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.posts$ = this.postService.getLatestPosts();
+    this.route.queryParams.subscribe(params => {
+      this.posts$ = this.postService.getLatestPosts(params.page);
+    });
   }
 
 }
