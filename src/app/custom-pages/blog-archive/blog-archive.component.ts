@@ -13,6 +13,7 @@ export class BlogArchiveComponent implements OnInit {
 
   posts$: Observable<Post[]>;
   page = 0;
+  maxPage = 0;
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
@@ -21,6 +22,8 @@ export class BlogArchiveComponent implements OnInit {
       this.page = Number(params.page || 0);
       this.posts$ = this.postService.getLatestPosts(this.page);
     });
+
+    this.maxPage = this.postService.getMaxPageIndex();
   }
 
 }

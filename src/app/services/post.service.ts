@@ -13,6 +13,10 @@ export class PostService {
 
   constructor() { }
 
+  getMaxPageIndex() {
+    return Math.floor(Posts.length / this.postsPerPage);
+  }
+
   getLatestPosts(page: number = 0): Observable<Post[]> {
     return new Observable(subscriber => {
 
