@@ -21,6 +21,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
 import { ProjectTypeChooserComponent } from './custom-pages/work-with-me/project-type-chooser/project-type-chooser.component';
 import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-chooser/project-type/project-type.component';
+import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-c
     WorkWithMeComponent,
     ProjectTypeChooserComponent,
     ProjectTypeComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,

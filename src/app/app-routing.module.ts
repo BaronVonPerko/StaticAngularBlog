@@ -6,10 +6,12 @@ import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.comp
 import { PostComponent } from './post/post.component';
 import { PageComponent } from './page/page.component';
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
+import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'portfolio', component: PortfolioComponent },
   { path: 'work-with-me', component: WorkWithMeComponent },
   { path: 'blog', component: BlogArchiveComponent },
   { path: 'blog/tag/:tag', component: TagArchiveComponent },
