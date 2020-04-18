@@ -136,7 +136,7 @@ fs.readdir(pathToPortfolio, (err, files) => {
     });
 
   const data = {
-    Portfolio: fileArray
+    Portfolios: fileArray
   }
 
   fs.writeFile(`${pathToCompiledPortfolio}/portfolio.json`, JSON.stringify(data), 'utf8', err => {

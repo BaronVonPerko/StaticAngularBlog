@@ -22,6 +22,8 @@ import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.co
 import { ProjectTypeChooserComponent } from './custom-pages/work-with-me/project-type-chooser/project-type-chooser.component';
 import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-chooser/project-type/project-type.component';
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
+import { PortfolioGridComponent } from './custom-pages/portfolio/portfolio-grid/portfolio-grid.component';
+import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/portfolio-item.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component
     ProjectTypeChooserComponent,
     ProjectTypeComponent,
     PortfolioComponent,
+    PortfolioGridComponent,
+    PortfolioItemComponent,
   ],
   imports: [
     BrowserModule,
