@@ -10,7 +10,8 @@ const pathToCompiledPortfolio = path.join(__dirname, '../src/_assets/portfolio')
 const ignoredFiles = [
   'gitignore',
   'pages.json',
-  'posts.json'
+  'posts.json',
+  'portfolio.json',
 ];
 
 // create compiled pages directory
