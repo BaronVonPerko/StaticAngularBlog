@@ -1,6 +1,6 @@
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
-      <img class="h-48 w-full object-cover" [src]="imageSrc" />
+      <img class="h-48 w-full object-cover object-top" [src]="imageSrc" />
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
       <div class="flex-1">
@@ -16,5 +16,9 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="p-2 text-right" *ngIf="portfolio.url">
+      <a target="_blank" [href]="portfolio.url">Visit Site</a>
     </div>
   </div>
