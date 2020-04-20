@@ -1,6 +1,6 @@
 <div class="flex-shrink-0 flex">
     <a *ngFor="let tag of tags"
-       [href]="getTagHref(tag)"
+       [routerLink]="getTagHref(tag)"
        [ngClass]="tag === highlightedTag ? 'text-indigo-200 bg-indigo-800 font-bold' : 'bg-indigo-100 text-indigo-800 font-semibold'"
        class="mr-2 px-2 inline-flex text-xs leading-5 rounded-full">
         #{{tag}}
