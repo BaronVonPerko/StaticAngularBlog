@@ -19,4 +19,4 @@
   </div>
 </div>
 
-<app-portfolio-modal [portfolioItem]="selectedItem"></app-portfolio-modal>
+<app-portfolio-modal [portfolioItem]="selectedItem" (itemClosed)="selectedItem = null"></app-portfolio-modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Portfolio from 'src/app/models/portfolio';
 
 @Component({
@@ -8,6 +8,7 @@ import Portfolio from 'src/app/models/portfolio';
 })
 export class PortfolioModalComponent implements OnInit {
   @Input() portfolioItem: Portfolio;
+  @Output() itemClosed = new EventEmitter();
 
   constructor() { }
 
@@ -19,7 +20,7 @@ export class PortfolioModalComponent implements OnInit {
   }
 
   closeModal() {
-    this.portfolioItem = null;
+    this.itemClosed.emit();
   }
 
 }
