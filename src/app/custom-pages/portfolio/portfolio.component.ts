@@ -9,10 +9,26 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class PortfolioComponent implements OnInit {
   portfolios: Portfolio[] = [];
   selectedItem: Portfolio;
+  uniqueTypes: string[];
+  selectedType: string;
 
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.loadAllPortfolios();
+    this.portfolioService.getUniqueTypes().subscribe(types => this.uniqueTypes = types);
+  }
+
+  onTypeClicked(selectedType) {
+    this.selectedType = selectedType;
+    this.portfolioService.getPortfoliosOfType(selectedType).subscribe(portfolios => this.portfolios = portfolios);
+  }
+
+  onClickAll() {
+    this.loadAllPortfolios();
+  }
+
+  loadAllPortfolios() {
     this.portfolioService.getPortfolios().subscribe(portfolios => this.portfolios = portfolios);
   }
 
