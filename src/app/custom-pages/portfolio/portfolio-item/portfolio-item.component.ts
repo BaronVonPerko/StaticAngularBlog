@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Portfolio from 'src/app/models/portfolio';
 
 @Component({
@@ -9,6 +9,7 @@ import Portfolio from 'src/app/models/portfolio';
 export class PortfolioItemComponent implements OnInit {
 
   @Input() portfolio: Portfolio;
+  @Output() openModal = new EventEmitter();
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class PortfolioItemComponent implements OnInit {
 
   get imageSrc(): string {
     return `/assets/images/${this.portfolio.image}`;
+  }
+
+  imageClicked() {
+    this.openModal.emit();
   }
 
 }
