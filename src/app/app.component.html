@@ -6,7 +6,7 @@
   <app-menu #theMenu></app-menu>
 
   <div class="flex flex-col w-0 flex-1 overflow-hidden">
-    <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+    <div class="relative flex-shrink-0 flex h-16 bg-white shadow">
       <button (click)="openSidebar()"
               class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden">
         <svg class="h-6 w-6"
@@ -36,6 +36,8 @@
               </div>
               <input id="search_field"
                      (input)="onSearchChanged($event.target.value)"
+                     (blur)="saveSearchString()"
+                     (focus)="restoreSearchString()"
                      class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
                      placeholder="Search" />
               <app-search-results *ngIf="searchString"

@@ -8,6 +8,7 @@ import { MenuComponent } from './components/menu/menu.component';
 export class AppComponent implements OnInit {
   @ViewChild(MenuComponent, {static: false}) theMenu;
   searchString = '';
+  savedSearchString = '';
 
   ngOnInit() {
   }
@@ -18,5 +19,17 @@ export class AppComponent implements OnInit {
 
   onSearchChanged(searchString: string) {
     this.searchString = searchString;
+  }
+
+  saveSearchString() {
+    // if a search result is clicked, give time to change route
+    setTimeout(() => {
+      this.savedSearchString = this.searchString;
+      this.searchString = null;
+    }, 100);
+  }
+
+  restoreSearchString() {
+    this.searchString = this.savedSearchString;
   }
 }
