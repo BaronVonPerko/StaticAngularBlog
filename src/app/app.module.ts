@@ -24,6 +24,7 @@ import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-c
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 import { PortfolioGridComponent } from './custom-pages/portfolio/portfolio-grid/portfolio-grid.component';
 import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/portfolio-item.component';
+import { PortfolioModalComponent } from './custom-pages/portfolio/portfolio-modal/portfolio-modal.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/
     PortfolioComponent,
     PortfolioGridComponent,
     PortfolioItemComponent,
+    PortfolioModalComponent,
   ],
   imports: [
     BrowserModule,

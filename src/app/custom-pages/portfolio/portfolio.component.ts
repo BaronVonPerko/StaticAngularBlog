@@ -8,6 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class PortfolioComponent implements OnInit {
   portfolios: Portfolio[] = [];
+  selectedItem: Portfolio;
 
   constructor(private portfolioService: PortfolioService) { }
 
