@@ -28224,6 +28224,7 @@ h2 {
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  max-height: 500px;
 }
 
 .page-content img {
@@ -28236,6 +28237,14 @@ h2 {
 
 .content ul li {
   list-style-type: disc;
+}
+
+.content blockquote {
+  background-color: #fdfdea;
+  border-left-width: 4px;
+  border-color: #e3a008;
+  padding: 1rem;
+  color: #8e4b10;
 }
 
 @media (min-width: 640px) {

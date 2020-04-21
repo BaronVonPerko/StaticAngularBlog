@@ -36,6 +36,7 @@ h2 {
 
 .content img {
     @apply mx-auto my-8;
+    max-height: 500px;
 }
 
 .page-content img {
@@ -48,4 +49,8 @@ h2 {
 
 .content ul li {
     @apply list-disc;
+}
+
+.content blockquote {
+    @apply bg-yellow-50 border-l-4 border-yellow-400 p-4 text-yellow-700;
 }
