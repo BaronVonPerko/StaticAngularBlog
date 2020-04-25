@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import Page from 'src/app/models/page.js';
 import { PageService } from 'src/app/services/page.service';
 import { Router } from '@angular/router';
+import { IconService } from 'src/app/services/icon.service';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,7 +14,12 @@ export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
   sidebarOpen = false;
 
-  constructor(private pageServices: PageService, private router: Router) { }
+  constructor(
+    private pageServices: PageService,
+    private router: Router,
+    private iconService: IconService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit() {
 
@@ -51,6 +58,13 @@ export class MenuComponent implements OnInit {
 
   goHome() {
     this.router.navigateByUrl('/');
+  }
+
+  getIcon(icon: string): SafeHtml {
+    const path = this.iconService.getIcon(icon)?.path;
+    if (path) {
+      return this.sanitizer.bypassSecurityTrustHtml(path);
+    }
   }
 
 }
