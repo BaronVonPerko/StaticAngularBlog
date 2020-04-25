@@ -60,6 +60,10 @@ fs.readFile(`${pathToCompiledPages}/pages.json`, (err, data) => {
             .ele('loc', null, `${baseUrl}${page.link}`);
     });
 
+    pageSitemap.ele('url').ele('loc', null, `${baseUrl}portfolio`);
+    pageSitemap.ele('url').ele('loc', null, `${baseUrl}blog`);
+    pageSitemap.ele('url').ele('loc', null, `${baseUrl}work-with-me`);
+
     pageSitemap.end({ pretty: true });
 
     fs.writeFile(`${baseSitemapDir}/page-sitemap.xml`, pageSitemap, 'utf8', err => {
