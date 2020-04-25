@@ -103,7 +103,9 @@ fs.readFile(`${pathToCompiledPosts}/posts.json`, (err, data) => {
     const json = JSON.parse(data);
     let tags = [];
     json.Posts.forEach(post => {
-        tags.push(...post.tags.split(','));
+        if(post.tags) {
+            tags.push(...post.tags.split(','));
+        }
     });
 
     [...new Set(tags)].forEach(tag => {

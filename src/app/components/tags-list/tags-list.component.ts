@@ -13,7 +13,7 @@ export class TagsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.tags = this.post.tags.split(',');
+    this.tags = this.post.tags?.split(',');
   }
 
   getTagHref(tag: string): string {
