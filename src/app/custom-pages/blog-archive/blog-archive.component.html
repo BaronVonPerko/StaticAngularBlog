@@ -1,7 +1,13 @@
 <h1>Latest Posts</h1>
 
-<app-post-box *ngFor="let post of posts$ | async"
+<app-post-box *ngFor="let post of posts"
               [post]="post"></app-post-box>
 
-<a *ngIf="page" [routerLink]="['/blog']" [queryParams]="{ page: this.page - 1}">Previous</a>
-<a *ngIf="page !== maxPage" [routerLink]="['/blog']" [queryParams]="{ page: this.page + 1}">Next</a>
+<span *ngIf="hasMorePosts"
+      class="inline-flex rounded-md shadow-sm">
+    <button type="button"
+            (click)="loadMore()"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+        Load More
+    </button>
+</span>

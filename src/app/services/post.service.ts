@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,15 +9,13 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
-  private postsPerPage = 5;
-
   constructor() { }
 
-  getMaxPageIndex() {
-    return Math.floor(Posts.length / this.postsPerPage);
+  getTotalNumberOfPosts(): Observable<number> {
+    return of(Posts.length);
   }
 
-  getLatestPosts(page: number = 0): Observable<Post[]> {
+  getLatestPosts(startIndex = 0, numberToLoad?: number): Observable<Post[]> {
     return new Observable(subscriber => {
 
       const posts = Posts.sort((a: Post, b: Post) => {
@@ -28,8 +26,8 @@ export class PostService {
 
       subscriber.next(
         posts.slice(
-          page * this.postsPerPage,
-          (page * this.postsPerPage) + this.postsPerPage
+          startIndex,
+          numberToLoad ? startIndex + numberToLoad : posts.length
         )
       );
     });
