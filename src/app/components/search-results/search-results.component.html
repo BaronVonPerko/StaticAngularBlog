@@ -2,7 +2,7 @@
     <div class="bg-white shadow overflow-hidden">
         <ul>
             <li *ngFor="let result of results">
-                <a routerLink="/blog/post/{{ result.link }}"
+                <a [routerLink]="getLink(result)"
                    class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
                     <div class="px-4 py-4 sm:px-6">
                         <div class="flex items-center justify-between">
@@ -12,7 +12,7 @@
                         </div>
                         <div class="mt-2 sm:flex sm:justify-between">
                             <div class="sm:flex">
-                                <span *ngFor="let tag of result.tags.split(',')"
+                                <span *ngFor="let tag of result.tags?.split(',')"
                                       class="mr-2 px-2 inline-flex text-xs leading-5 rounded-full bg-indigo-100 text-indigo-800 font-semibold">
                                     #{{tag}}
                                 </span>

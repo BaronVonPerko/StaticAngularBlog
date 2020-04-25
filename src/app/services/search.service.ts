@@ -15,7 +15,7 @@ export class SearchService {
     return this.postService.getLatestPosts().pipe(
       map(posts => {
         return posts.filter(post => {
-          return post.tags.toLowerCase().indexOf(searchString.toLowerCase()) > -1
+          return post.tags?.toLowerCase().indexOf(searchString.toLowerCase()) > -1
             || post.title.toLowerCase().indexOf(searchString.toLowerCase()) > -1;
         });
       }

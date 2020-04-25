@@ -22,4 +22,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
+  getLink(post: Post): string {
+    return `/blog/post/${post.link}`;
+  }
+
 }

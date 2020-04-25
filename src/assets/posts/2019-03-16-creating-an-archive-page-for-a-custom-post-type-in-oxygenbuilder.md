@@ -3,7 +3,7 @@ date: 2019-03-16
 title: Creating an Archive Page for a Custom Post Type in OxygenBuilder
 image: oxygenbuilder.png
 categories: WordPress
-tags: archive,ctp,custom post type,oxygen,wordpress
+tags: archive,cpt,custom post type,oxygen,wordpress
 ---
 I've been a real fan of [OxygenBuilder](https://oxygenbuilder.com/) since version 2 was released last year. Today, I want to show how to create an Archive page for a Custom Post Type using OxygenBuilder and the free [CPT UI plugin](https://wordpress.org/plugins/custom-post-type-ui/) for WordPress.
 

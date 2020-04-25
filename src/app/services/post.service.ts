@@ -33,9 +33,9 @@ export class PostService {
     });
   }
 
-  getPostsForTag(tag: string, page: number = 0): Observable<Post[]> {
-    return this.getLatestPosts(page).pipe(
-      map(posts => posts.filter(post => post.tags.indexOf(tag) > -1))
+  getPostsForTag(tag: string): Observable<Post[]> {
+    return this.getLatestPosts().pipe(
+      map(posts => posts.filter(post => post.tags?.indexOf(tag) > -1))
     );
   }
 
