@@ -26,6 +26,7 @@ export class PortfolioComponent implements OnInit {
 
   onClickAll() {
     this.loadAllPortfolios();
+    this.selectedType = null;
   }
 
   loadAllPortfolios() {
