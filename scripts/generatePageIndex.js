@@ -3,9 +3,11 @@ const path = require('path');
 const metaParser = require('markdown-yaml-metadata-parser');
 const pathToPages = path.join(__dirname, '../src/assets/pages');
 const pathToPosts = path.join(__dirname, '../src/assets/posts');
+const pathToCodeTips = path.join(__dirname, '../src/assets/codetips');
 const pathToPortfolio = path.join(__dirname, '../src/assets/portfolio');
 const pathToCompiledPages = path.join(__dirname, '../src/_assets/pages');
 const pathToCompiledPosts = path.join(__dirname, '../src/_assets/posts');
+const pathToCompiledCodeTips = path.join(__dirname, '../src/_assets/codetips');
 const pathToCompiledPortfolio = path.join(__dirname, '../src/_assets/portfolio');
 const ignoredFiles = [
   'gitignore',
@@ -29,6 +31,15 @@ fs.mkdirSync(pathToCompiledPosts, {
 }, error => {
   if (error) {
     console.error("An error occurred creating the posts directory", error);
+  }
+});
+
+// create compiled code tips directory
+fs.mkdirSync(pathToCompiledCodeTips, {
+  recursive: true
+}, error => {
+  if (error) {
+    console.error("An error occurred creating the code tips directory", error);
   }
 });
 
@@ -111,6 +122,43 @@ fs.readdir(pathToPosts, (err, files) => {
   }
 
   fs.writeFile(`${pathToCompiledPosts}/posts.json`, JSON.stringify(data), 'utf8', err => {
+    if (err) console.log(err);
+  });
+});
+
+
+// compile the code tips
+fs.readdir(pathToCodeTips, (err, files) => {
+  if (err) console.error("Error reading code tips", err);
+
+  let fileArray = [];
+
+  files.filter(file => !file.includes(ignoredFiles))
+    .forEach(file => {
+      const contents = fs.readFileSync(path.join(__dirname, `../src/assets/codetips/${file}`), 'utf8');
+      const parsed = metaParser(contents);
+
+      fs.writeFile(`${pathToCompiledCodeTips}/${file}`, parsed.content, 'utf8', err => {
+        if (err) {
+          console.error("Error writing file contents", error);
+        }
+      });
+
+      fileArray.push({
+        filename: file,
+        link: file.replace('.md', ''),
+        title: parsed.metadata.title,
+        date: parsed.metadata.date,
+        image: parsed.metadata.image,
+        language: parsed.metadata.language
+      });
+    });
+
+  const data = {
+    Posts: fileArray
+  }
+
+  fs.writeFile(`${pathToCompiledCodeTips}/codetips.json`, JSON.stringify(data), 'utf8', err => {
     if (err) console.log(err);
   });
 });

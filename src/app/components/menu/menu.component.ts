@@ -61,7 +61,7 @@ export class MenuComponent implements OnInit {
       title: 'Customizer UI Plugin for WordPress Developers',
       menuTitle: 'Customizer UI Plugin',
       icon: 'md-pencil'
-    }
+    };
 
     this.pageServices.getMenuPages().subscribe(pages => {
       this.menuPages = [blogPage, codeTipsArchivePage, portfolioPage, workWithMePage, customizerUiPage, ...pages];
