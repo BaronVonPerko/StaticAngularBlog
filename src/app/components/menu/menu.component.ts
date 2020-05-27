@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit {
       title: 'Portfolio',
       menuTitle: 'Portfolio',
       icon: 'md-camera'
-    }
+    };
 
     const workWithMePage: Page = {
       inMenu: true,
@@ -47,8 +47,16 @@ export class MenuComponent implements OnInit {
       icon: 'md-briefcase'
     };
 
+    const customizerUiPage: Page = {
+      inMenu: true,
+      link: '/wpcui',
+      title: 'Customizer UI Plugin for WordPress Developers',
+      menuTitle: 'Customizer UI Plugin',
+      icon: 'md-pencil'
+    }
+
     this.pageServices.getMenuPages().subscribe(pages => {
-      this.menuPages = [blogPage, portfolioPage, workWithMePage, ...pages];
+      this.menuPages = [blogPage, portfolioPage, workWithMePage, customizerUiPage, ...pages];
     });
   }
 

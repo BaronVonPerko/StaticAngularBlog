@@ -7,12 +7,14 @@ import { PostComponent } from './post/post.component';
 import { PageComponent } from './page/page.component';
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
+import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'work-with-me', component: WorkWithMeComponent },
+  { path: 'wpcui', component: WpcuiComponent },
   { path: 'blog', component: BlogArchiveComponent },
   { path: 'blog/tag/:tag', component: TagArchiveComponent },
   { path: 'blog/post/:title', component: PostComponent },
