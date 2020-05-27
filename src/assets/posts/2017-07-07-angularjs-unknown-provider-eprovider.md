@@ -1,5 +1,5 @@
 ---
-date: 2017-07-31
+date: 2017-07-07
 title: AngularJS - Unknown Provider 'eProvider' | SOLVED
 image: angular-shield.png
 categories: angularjs
