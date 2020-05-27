@@ -9,6 +9,7 @@ import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.co
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
+import { CodetipComponent } from './codetip/codetip.component';
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
   { path: 'blog/tag/:tag', component: TagArchiveComponent },
   { path: 'blog/post/:title', component: PostComponent },
   { path: 'code-tips', component: CodeTipsArchiveComponent },
+  { path: 'code-tips/:title', component: CodetipComponent },
   { path: ':page', component: PageComponent }, // this is a catch-all and needs to be last
 ];
 

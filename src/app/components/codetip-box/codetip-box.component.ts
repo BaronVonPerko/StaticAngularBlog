@@ -20,7 +20,7 @@ export class CodetipBoxComponent implements OnInit {
   }
 
   get tipLink() {
-    return `/code-tips/${this.link}`;
+    return `/code-tips/${this.codeTip.link}`;
   }
 
 }
