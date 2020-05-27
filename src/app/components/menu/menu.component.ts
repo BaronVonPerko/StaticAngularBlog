@@ -31,6 +31,14 @@ export class MenuComponent implements OnInit {
       icon: 'md-collection'
     };
 
+    const codeTipsArchivePage: Page = {
+      inMenu: true,
+      link: '/code-tips',
+      title: 'Code Tips',
+      menuTitle: 'Code Tips',
+      icon: 'md-collection'
+    };
+
     const portfolioPage: Page = {
       inMenu: true,
       link: '/portfolio',
@@ -56,7 +64,7 @@ export class MenuComponent implements OnInit {
     }
 
     this.pageServices.getMenuPages().subscribe(pages => {
-      this.menuPages = [blogPage, portfolioPage, workWithMePage, customizerUiPage, ...pages];
+      this.menuPages = [blogPage, codeTipsArchivePage, portfolioPage, workWithMePage, customizerUiPage, ...pages];
     });
   }
 

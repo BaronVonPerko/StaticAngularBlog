@@ -26,6 +26,8 @@ import { PortfolioGridComponent } from './custom-pages/portfolio/portfolio-grid/
 import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/portfolio-item.component';
 import { PortfolioModalComponent } from './custom-pages/portfolio/portfolio-modal/portfolio-modal.component';
 import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
+import { CodetipComponent } from './codetip/codetip.component';
+import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
     PortfolioItemComponent,
     PortfolioModalComponent,
     WpcuiComponent,
+    CodetipComponent,
+    CodeTipsArchiveComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { PageComponent } from './page/page.component';
 import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
+import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
 
 
 const appRoutes: Routes = [
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   { path: 'blog', component: BlogArchiveComponent },
   { path: 'blog/tag/:tag', component: TagArchiveComponent },
   { path: 'blog/post/:title', component: PostComponent },
-  { path: ':page', component: PageComponent },
+  { path: 'code-tips', component: CodeTipsArchiveComponent },
+  { path: ':page', component: PageComponent }, // this is a catch-all and needs to be last
 ];
 
 @NgModule({
