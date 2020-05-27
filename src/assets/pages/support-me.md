@@ -8,4 +8,6 @@ I make free, open-source apps for the web and FitBit! If you like one of my apps
 
 [Click Here to Donate](https://www.paypal.me/chrisperko)
 
+I'm currently working hard on the WordPress Customizer UI Plugin.  [You can now sponsor this project on GitHub!](https://github.com/sponsors/BaronVonPerko)
+
 ![Fitbit Roni](/assets/images/fitbit-roni.jpg)
