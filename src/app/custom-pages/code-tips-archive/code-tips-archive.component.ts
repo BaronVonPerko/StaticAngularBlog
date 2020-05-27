@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CodetipsService } from 'src/app/services/codetips.service';
+import CodeTip from 'src/app/models/codetip';
 
 @Component({
   selector: 'app-code-tips-archive',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodeTipsArchiveComponent implements OnInit {
 
-  constructor() { }
+  codeTips: CodeTip[];
+
+  constructor(private codeTipsService: CodetipsService) { }
 
   ngOnInit(): void {
+    this.codeTipsService.getCodeTips().subscribe(tips => this.codeTips = tips);
+  }
+
+  getImage(tip: CodeTip) {
+    return `/assets/images/${tip.image}`;
   }
 
 }

@@ -155,7 +155,7 @@ fs.readdir(pathToCodeTips, (err, files) => {
     });
 
   const data = {
-    Posts: fileArray
+    CodeTips: fileArray
   }
 
   fs.writeFile(`${pathToCompiledCodeTips}/codetips.json`, JSON.stringify(data), 'utf8', err => {

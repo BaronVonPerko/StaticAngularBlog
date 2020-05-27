@@ -28,6 +28,7 @@ import { PortfolioModalComponent } from './custom-pages/portfolio/portfolio-moda
 import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 import { CodetipComponent } from './codetip/codetip.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
+import { CodetipBoxComponent } from './components/codetip-box/codetip-box.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-
     WpcuiComponent,
     CodetipComponent,
     CodeTipsArchiveComponent,
+    CodetipBoxComponent,
   ],
   imports: [
     BrowserModule,
