@@ -21,4 +21,10 @@ export class CodetipsService {
       subscriber.next(codeTips);
     });
   }
+
+  getCodeTipDetails(link: string): Observable<CodeTip> {
+    return new Observable(subscriber => {
+      subscriber.next(CodeTips.filter(tip => tip.link === link)[0]);
+    });
+  }
 }
