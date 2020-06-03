@@ -1,0 +1,1 @@
+aws s3api create-bucket --bucket chrisperko.net --profile chrisperkonet
