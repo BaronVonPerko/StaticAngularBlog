@@ -1,14 +1,16 @@
 {
   "name": "static-angular-blog",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js && ng serve --port 4100",
+    "start": "ng serve --port 4100",
     "build": "ng build",
+    "buildProd": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "tailwind": "npx tailwindcss build src/tailwind.css -o src/styles.css"
+    "tailwind": "npx tailwindcss build src/tailwind.css -o src/styles.css",
+    "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js"
   },
   "private": true,
   "dependencies": {
