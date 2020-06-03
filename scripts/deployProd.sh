@@ -1,0 +1,1 @@
+aws --profile chrisperkonet s3 sync ./dist/StaticAngularBlog/ s3://chrisperko.net --delete --acl public-read
