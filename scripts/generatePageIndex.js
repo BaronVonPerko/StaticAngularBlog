@@ -138,12 +138,6 @@ fs.readdir(pathToCodeTips, (err, files) => {
       const contents = fs.readFileSync(path.join(__dirname, `../src/assets/codetips/${file}`), 'utf8');
       const parsed = metaParser(contents);
 
-      fs.writeFile(`${pathToCompiledCodeTips}/${file}`, parsed.content, 'utf8', err => {
-        if (err) {
-          console.error("Error writing file contents", error);
-        }
-      });
-
       fileArray.push({
         filename: file,
         link: file.replace('.md', ''),
