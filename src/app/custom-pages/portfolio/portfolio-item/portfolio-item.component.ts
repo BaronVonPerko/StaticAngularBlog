@@ -16,8 +16,10 @@ export class PortfolioItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get imageSrc(): string {
-    return `/assets/images/${this.portfolio.image}`;
+  get imageSrcMedium(): string {
+    let imageName = this.portfolio.image.split('.');
+
+    return `/_assets/images/${imageName[0]}-400.${imageName[1]}`;
   }
 
   imageClicked() {

@@ -15,18 +15,23 @@ try {
 // create resized images directory
 fs.mkdirSync(path.join(__dirname, '../src/_assets/images'), {
     recursive: true
-  }, error => {
+}, error => {
     if (error) {
-      console.error("An error occurred creating the images directory", error);
+        console.error("An error occurred creating the images directory", error);
     }
-  });
+});
 
 let contents = JSON.parse(file);
 
 contents.Portfolios.forEach(portfolio => {
     let imagePath = path.join(__dirname, `../src/assets/images/${portfolio.image}`);
-    
-    sharp(imagePath)
-        .resize(250)
-        .toFile(path.join(__dirname, `../src/_assets/images/${portfolio.image}`));
+    let imageName = portfolio.image.split('.');
+    let sizes = [400];
+
+    sizes.forEach(size => {
+        sharp(imagePath)
+            .resize(size)
+            .toFile(path.join(__dirname, `../src/_assets/images/${imageName[0]}-${size}.${imageName[1]}`));
+    });
+
 });
