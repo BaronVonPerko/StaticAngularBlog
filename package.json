@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "tailwind": "npx tailwindcss build src/tailwind.css -o src/styles.css",
-    "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js"
+    "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js && node ./scripts/generatePortfolioImageSizes"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "@ngx-loading-bar/router": "^4.2.0",
     "ngx-markdown": "^8.2.2",
     "rxjs": "^6.5.5",
+    "sharp": "^0.25.4",
     "tslib": "^1.11.1",
     "zone.js": "^0.10.3"
   },
