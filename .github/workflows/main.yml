@@ -22,8 +22,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Build for production
-    - name: Run a one-line script
+    - name: Install NPM Dependencies
+      run: npm install
+
+    - name: Setup blog resources
+      run: npm run resources 
+
+    - name: Build for production
       run: npm run buildProd
 
     # Sync with S3 and invalidate CloudFront
