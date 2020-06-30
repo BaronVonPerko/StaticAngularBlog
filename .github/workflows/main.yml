@@ -1,0 +1,38 @@
+# When master is updated, build and push to production S3
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Build for production
+    - name: Run a one-line script
+      run: npm run buildProd
+
+    # Sync with S3 and invalidate CloudFront
+    - name: S3 Deploy
+      uses: Reggionick/s3-deploy@v1.1.2
+      with: 
+        # Directory to deploy
+        folder: ./dist/StaticAngularBlog/
+        # S3 Bucket
+        bucket: chrisperko.net
+        # AWS CloudFront distribution ID
+        dist-id: E3BISNCJCIR2PJ
