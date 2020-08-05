@@ -25,7 +25,7 @@
     "@ngx-loading-bar/core": "^4.2.0",
     "@ngx-loading-bar/http-client": "^4.2.0",
     "@ngx-loading-bar/router": "^4.2.0",
-    "ngx-markdown": "^8.2.2",
+    "ngx-markdown": "^10.1.0",
     "rxjs": "^6.5.5",
     "sharp": "^0.25.4",
     "tslib": "^1.11.1",
