@@ -20,12 +20,19 @@ Run the server
 npm start
 ```
 
-Running the server will run the scripts to generate the sitemaps and page indexes.
+Running the server will run the scripts to generate the sitemaps, page indexes, and resize images used on the portfolio.
 If you need to run these individually:
 
 ```bash
 node ./scripts/generatePageIndex.js
 node ./scripts/generateSiteMap.js
+node ./scripts/generatePortfolioImageSizes.js
+```
+
+Or to run them all, simply use:
+
+```bash
+npm run resources
 ```
 
 ---
