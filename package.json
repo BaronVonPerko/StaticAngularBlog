@@ -10,7 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "tailwind": "npx tailwindcss build src/tailwind.css -o src/styles.css",
-    "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js && node ./scripts/generatePortfolioImageSizes"
+    "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generateSiteMap.js && node ./scripts/generatePortfolioImageSizes",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,8 @@
     "@ngx-loading-bar/core": "^4.2.0",
     "@ngx-loading-bar/http-client": "^4.2.0",
     "@ngx-loading-bar/router": "^4.2.0",
+    "@scullyio/ng-lib": "^1.0.0-beta.0",
+    "@scullyio/scully": "^1.0.0-beta.0",
     "ngx-markdown": "^10.1.0",
     "rxjs": "^6.5.5",
     "sharp": "^0.25.4",
