@@ -29,6 +29,7 @@ import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 import { CodetipComponent } from './codetip/codetip.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
 import { CodetipBoxComponent } from './components/codetip-box/codetip-box.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { CodetipBoxComponent } from './components/codetip-box/codetip-box.compon
     MarkdownModule.forRoot({ loader: HttpClient }),
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
-    LoadingBarModule
+    LoadingBarModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
