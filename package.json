@@ -55,7 +55,7 @@
     "markdown-yaml-metadata-parser": "^2.0.5",
     "protractor": "~7.0.0",
     "showdown": "^1.9.1",
-    "tailwindcss": "^1.2.0",
+    "tailwindcss": "^1.6.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.7"
