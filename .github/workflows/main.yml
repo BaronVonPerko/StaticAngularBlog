@@ -35,13 +35,16 @@ jobs:
 
     - name: Build for production
       run: npm run buildProd
+      
+    - name: Build scully
+      run: npm run scully
 
     # Sync with S3 and invalidate CloudFront
     - name: S3 Deploy
       uses: Reggionick/s3-deploy@v1.1.2
       with: 
         # Directory to deploy
-        folder: ./dist/StaticAngularBlog/
+        folder: ./dist/static/
         # S3 Bucket
         bucket: ${{ secrets.S3_BUCKET }}
         # AWS CloudFront distribution ID
