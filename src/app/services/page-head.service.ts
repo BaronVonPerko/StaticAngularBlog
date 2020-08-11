@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class PageHeadService {
   public setOpenGraphTags(title: string, image: string, url: string, type = "article") {
     this.meta.updateTag({
       property: "og:image",
-      content: `/assets/images/${image}`,
+      content: `${environment.baseurl}/assets/images/${image}`,
     });
 
     this.meta.updateTag({
@@ -32,7 +33,7 @@ export class PageHeadService {
 
     this.meta.updateTag({
       property: "og:url",
-      content: url,
+      content: `${environment.baseurl}/${url}`,
     });
   }
 
@@ -54,7 +55,7 @@ export class PageHeadService {
 
     this.meta.updateTag({
       property: "twitter:image",
-      content: image,
+      content: `${environment.baseurl}/assets/images/${image}`,
     });
   }
 }

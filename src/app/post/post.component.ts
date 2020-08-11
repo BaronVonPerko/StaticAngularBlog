@@ -24,7 +24,7 @@ export class PostComponent implements OnInit {
       this.postUrl = `/_assets/posts/${this.post.link}.md`;
 
       this.pageHeadService.setTitle(this.post.title);
-      this.pageHeadService.setOpenGraphTags(this.post.title, this.post.image, window.location.href);
+      this.pageHeadService.setOpenGraphTags(this.post.title, this.post.image, this.post.link);
       this.pageHeadService.setTwitterCardData(this.post.title, this.post.image);
     });
   }
