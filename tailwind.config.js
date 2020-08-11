@@ -15,7 +15,8 @@ module.exports = {
     enabled: true,
     content: [
       './src/**/*.html',
-      './src/**/*.js'
+      './src/**/*.js',
+      './src/**/*.ts'
     ]
   }
 }
