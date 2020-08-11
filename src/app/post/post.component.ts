@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import Post from '../models/post';
@@ -22,7 +22,10 @@ export class PostComponent implements OnInit {
         .subscribe(post => this.post = post);
 
       this.postUrl = `/_assets/posts/${this.post.link}.md`;
+
       this.pageHeadService.setTitle(this.post.title);
+      this.pageHeadService.setOpenGraphTags(this.post.title, this.post.image, window.location.href);
+      this.pageHeadService.setTwitterCardData(this.post.title, this.post.image);
     });
   }
 
