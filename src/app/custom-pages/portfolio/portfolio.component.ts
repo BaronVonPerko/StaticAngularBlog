@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Portfolio from 'src/app/models/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import {CodetipsService} from "../../services/codetips.service";
+import {PageHeadService} from "../../services/page-head.service";
 
 @Component({
   selector: 'app-portfolio',
@@ -12,11 +14,12 @@ export class PortfolioComponent implements OnInit {
   uniqueTypes: string[];
   selectedType: string;
 
-  constructor(private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private pageHeadService: PageHeadService) { }
 
   ngOnInit(): void {
     this.loadAllPortfolios();
     this.portfolioService.getUniqueTypes().subscribe(types => this.uniqueTypes = types);
+    this.pageHeadService.setTitle("Portfolio")
   }
 
   onTypeClicked(selectedType) {

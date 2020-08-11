@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PageHeadService} from "../../services/page-head.service";
 
 @Component({
   selector: 'app-work-with-me',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class WorkWithMeComponent implements OnInit {
   projectChooserShown = false;
 
-  constructor() { }
+  constructor(private pageHeadService: PageHeadService) { }
 
   ngOnInit(): void {
+    this.pageHeadService.setTitle("Work With Me");
   }
 }

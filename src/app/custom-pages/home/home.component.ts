@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import {CodetipsService} from "../../services/codetips.service";
+import {PageHeadService} from "../../services/page-head.service";
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,13 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class HomeComponent implements OnInit {
   portfolioCount: number;
 
-  constructor(private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private pageHeadService: PageHeadService) { }
 
   ngOnInit() {
     this.portfolioService.getPortfolios()
       .subscribe(portfolios => this.portfolioCount = portfolios.length);
+
+    this.pageHeadService.setTitle(null);
   }
 
 }
