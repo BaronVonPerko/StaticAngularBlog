@@ -1,8 +1,19 @@
-import {HandledRoute, registerPlugin, RouteTypes, ScullyConfig} from '@scullyio/scully';
+import {HandledRoute, registerPlugin, RouteTypes, ScullyConfig, setPluginConfig} from '@scullyio/scully';
 
 import {Posts} from "./src/_assets/posts/posts.json";
 import {CodeTips} from "./src/_assets/codetips/codetips.json";
 import {Pages} from "./src/_assets/pages/pages.json";
+import {getSitemapPlugin} from "@gammastream/scully-plugin-sitemap";
+
+const SitemapPlugin = getSitemapPlugin();
+
+setPluginConfig(SitemapPlugin, {
+  urlPrefix: 'https://chrisperko.net/',
+  sitemapFilename: 'sitemap.xml',
+  merge: false,
+  changeFreq: 'monthly',
+  routes: { },
+});
 
 function blogPostPlugin(route: string, config = {}): Promise<HandledRoute[]> {
   const routes = [];
