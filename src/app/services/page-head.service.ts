@@ -17,44 +17,44 @@ export class PageHeadService {
 
   public setOpenGraphTags(title: string, image: string, url: string, type = "article") {
     this.meta.updateTag({
-      name: "og:image",
+      property: "og:image",
       content: `${environment.baseurl}/assets/images/${image}`,
     });
 
     this.meta.updateTag({
-      name: "og:title",
+      property: "og:title",
       content: title,
     });
 
     this.meta.updateTag({
-      name: "og:type",
+      property: "og:type",
       content: type,
     });
 
     this.meta.updateTag({
-      name: "og:url",
+      property: "og:url",
       content: `${environment.baseurl}/${url}`,
     });
   }
 
   public setTwitterCardData(title: string, image: string) {
     this.meta.updateTag({
-      name: "twitter:card",
+      property: "twitter:card",
       content: title,
     });
 
     this.meta.updateTag({
-      name: "twitter:title",
+      property: "twitter:title",
       content: title,
     });
 
     this.meta.updateTag({
-      name: "twitter:creator",
+      property: "twitter:creator",
       content: "@chrisjperko",
     });
 
     this.meta.updateTag({
-      name: "twitter:image",
+      property: "twitter:image",
       content: `${environment.baseurl}/assets/images/${image}`,
     });
   }
