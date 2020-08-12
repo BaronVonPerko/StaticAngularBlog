@@ -40,7 +40,7 @@ export class PageHeadService {
   public setTwitterCardData(title: string, image: string) {
     this.meta.updateTag({
       property: "twitter:card",
-      content: title,
+      content: "summary_large_image",
     });
 
     this.meta.updateTag({
