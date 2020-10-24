@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import Post from 'src/app/models/post';
 import {PageHeadService} from "../../services/page-head.service";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tag-archive',
@@ -10,16 +11,16 @@ import {PageHeadService} from "../../services/page-head.service";
 })
 export class TagArchiveComponent implements OnInit {
   tag: string;
-  posts: Post[];
+  posts$: Observable<Post[]>;
 
   constructor(private route: ActivatedRoute, private postService: PostService, private pageHeadService: PageHeadService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.tag = params.tag;
+      this.posts$ = this.postService.getPostsForTag(this.tag);
     });
 
-    this.postService.getPostsForTag(this.tag).subscribe(posts => this.posts = posts);
     this.pageHeadService.setTitle("Tags");
   }
 
