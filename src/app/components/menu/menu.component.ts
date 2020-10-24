@@ -45,14 +45,6 @@ export class MenuComponent implements OnInit {
       icon: "md-camera",
     };
 
-    const workWithMePage: Page = {
-      inMenu: true,
-      link: "/work-with-me",
-      title: "Work With Me",
-      menuTitle: "Work With Me",
-      icon: "md-briefcase",
-    };
-
     const customizerUiPage: Page = {
       inMenu: true,
       link: "/wpcui",
@@ -66,7 +58,6 @@ export class MenuComponent implements OnInit {
         blogPage,
         codeTipsArchivePage,
         portfolioPage,
-        workWithMePage,
         customizerUiPage,
         ...pages,
       ];

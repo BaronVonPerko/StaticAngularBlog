@@ -18,9 +18,6 @@ import { TagsListComponent } from './components/tags-list/tags-list.component';
 import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.component';
 import { PostBoxComponent } from './components/post-box/post-box.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { WorkWithMeComponent } from './custom-pages/work-with-me/work-with-me.component';
-import { ProjectTypeChooserComponent } from './custom-pages/work-with-me/project-type-chooser/project-type-chooser.component';
-import { ProjectTypeComponent } from './custom-pages/work-with-me/project-type-chooser/project-type/project-type.component';
 import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
 import { PortfolioGridComponent } from './custom-pages/portfolio/portfolio-grid/portfolio-grid.component';
 import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/portfolio-item.component';
@@ -45,9 +42,6 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     TagsListComponent,
     TagArchiveComponent,
     SearchResultsComponent,
-    WorkWithMeComponent,
-    ProjectTypeChooserComponent,
-    ProjectTypeComponent,
     PortfolioComponent,
     PortfolioGridComponent,
     PortfolioItemComponent,
