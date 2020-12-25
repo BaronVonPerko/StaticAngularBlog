@@ -8,7 +8,7 @@ import {getSitemapPlugin} from "@gammastream/scully-plugin-sitemap";
 const SitemapPlugin = getSitemapPlugin();
 
 setPluginConfig(SitemapPlugin, {
-  urlPrefix: 'https://chrisperko.net/',
+  urlPrefix: 'https://perko.dev/',
   sitemapFilename: 'sitemap.xml',
   merge: false,
   changeFreq: 'monthly',
