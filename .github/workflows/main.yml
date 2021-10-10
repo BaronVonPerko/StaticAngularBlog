@@ -32,6 +32,9 @@ jobs:
 
     - name: Setup blog resources
       run: npm run resources 
+    
+    - name: Generate stylesheet
+      run: npm run tailwind
 
     - name: Build for production
       run: npm run buildProd
