@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "tailwind": "npx tailwindcss build src/tailwind.css -o src/styles.css",
+    "tailwind": "npx tailwindcss -i src/tailwind.css -o src/styles.css",
     "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generatePortfolioImageSizes",
     "scully": "scully",
     "scully:serve": "scully serve"
@@ -59,7 +59,7 @@
     "markdown-yaml-metadata-parser": "^2.1.2",
     "protractor": "~7.0.0",
     "showdown": "^1.9.1",
-    "tailwindcss": "^1.6.0",
+    "tailwindcss": "^1.9.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.5"
