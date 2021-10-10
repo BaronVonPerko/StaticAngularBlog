@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Posts } from '../../_assets/posts/posts.json';
+import { default as Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,13 +12,13 @@ export class PostService {
   constructor() { }
 
   getTotalNumberOfPosts(): Observable<number> {
-    return of(Posts.length);
+    return of(Posts.Posts.length);
   }
 
   getLatestPosts(startIndex = 0, numberToLoad?: number): Observable<Post[]> {
     return new Observable(subscriber => {
 
-      const posts = Posts.sort((a: Post, b: Post) => {
+      const posts = Posts.Posts.sort((a: Post, b: Post) => {
         const aTime = new Date(a.date).getTime();
         const bTime = new Date(b.date).getTime();
         return bTime - aTime;
@@ -41,7 +41,7 @@ export class PostService {
 
   getPostDetails(link: string): Observable<Post> {
     return new Observable(subscriber => {
-      subscriber.next(Posts.filter(post => post.link === link)[0]);
+      subscriber.next(Posts.Posts.filter(post => post.link === link)[0]);
     });
   }
 }

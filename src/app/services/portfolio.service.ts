@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Portfolios } from '../../_assets/portfolio/portfolio.json';
+import { default as Portfolios } from '../../_assets/portfolio/portfolio.json';
 import Portfolio from '../models/portfolio';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class PortfolioService {
 
   getPortfolios(): Observable<Portfolio[]> {
     return new Observable(subscriber => {
-      subscriber.next(Portfolios);
+      subscriber.next(Portfolios.Portfolios);
     });
   }
 
@@ -23,7 +23,7 @@ export class PortfolioService {
 
   getUniqueTypes(): Observable<string[]> {
     return new Observable(subscriber => {
-      const types = [...new Set(Portfolios.map(portfolio => portfolio.type))];
+      const types = [...new Set(Portfolios.Portfolios.map(portfolio => portfolio.type))];
       subscriber.next(types);
     });
   }
