@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pages } from '../../_assets/pages/pages.json';
+import { default as Pages } from '../../_assets/pages/pages.json';
 import Page from '../models/page.js';
 import { Observable } from 'rxjs';
 
@@ -12,13 +12,13 @@ export class PageService {
 
   getMenuPages(): Observable<Page[]> {
     return new Observable(subscriber => {
-      subscriber.next(Pages.filter(page => page.inMenu));
+      subscriber.next(Pages.Pages.filter(page => page.inMenu));
     });
   }
 
   getPageDetails(link: string): Observable<Page> {
     return new Observable(subscriber => {
-      subscriber.next(Pages.filter(page => page.link === link)[0]);
+      subscriber.next(Pages.Pages.filter(page => page.link === link)[0]);
     });
   }
 

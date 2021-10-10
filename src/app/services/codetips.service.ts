@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import CodeTip from '../models/codetip';
-import { CodeTips } from '../../_assets/codetips/codetips.json';
+import { default as CodeTips } from '../../_assets/codetips/codetips.json';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class CodetipsService {
 
   getCodeTips(): Observable<CodeTip[]> {
     return new Observable(subscriber => {
-      const codeTips = CodeTips.sort((a: CodeTip, b: CodeTip) => {
+      const codeTips = CodeTips.CodeTips.sort((a: CodeTip, b: CodeTip) => {
         const aTime = new Date(a.date).getTime();
         const bTime = new Date(b.date).getTime();
         return bTime - aTime;
@@ -24,7 +24,7 @@ export class CodetipsService {
 
   getCodeTipDetails(link: string): Observable<CodeTip> {
     return new Observable(subscriber => {
-      subscriber.next(CodeTips.filter(tip => tip.link === link)[0]);
+      subscriber.next(CodeTips.CodeTips.filter(tip => tip.link === link)[0]);
     });
   }
 }

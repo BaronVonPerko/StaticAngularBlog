@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## What is this?
 
-This is a custom built static website for ChrisPerko.net, my blog and personal website.
+This is a custom built static website for ChrisPerko.net, my blog and personal website.  It is currenly running Angular v12, and Tailwind v1.9.
 
 ## Development Setup
 
@@ -40,5 +40,5 @@ Open your browser to the development server:
 *localhost:4100*
 
 ## Use It
-Feel free to use this code however you wish.  Create your own blog, and style it how ever you like!
+Feel free to use this code however you wish.  Create your own blog, and style it however you like!
 
