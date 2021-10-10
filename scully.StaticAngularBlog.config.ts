@@ -1,9 +1,9 @@
 import {HandledRoute, registerPlugin, RouteTypes, ScullyConfig, setPluginConfig} from '@scullyio/scully';
 
-import {Posts} from "./src/_assets/posts/posts.json";
-import {CodeTips} from "./src/_assets/codetips/codetips.json";
-import {Pages} from "./src/_assets/pages/pages.json";
-import {getSitemapPlugin} from "@gammastream/scully-plugin-sitemap";
+import {Posts} from './src/_assets/posts/posts.json';
+import {CodeTips} from './src/_assets/codetips/codetips.json';
+import {Pages} from './src/_assets/pages/pages.json';
+import {getSitemapPlugin} from '@gammastream/scully-plugin-sitemap';
 
 const SitemapPlugin = getSitemapPlugin();
 
@@ -12,7 +12,7 @@ setPluginConfig(SitemapPlugin, {
   sitemapFilename: 'sitemap.xml',
   merge: false,
   changeFreq: 'monthly',
-  routes: { },
+  routes: {},
 });
 
 function blogPostPlugin(route: string, config = {}): Promise<HandledRoute[]> {
@@ -20,7 +20,7 @@ function blogPostPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 
   Posts.forEach(post => {
     routes.push({route: `/blog/post/${post.link}`, type: RouteTypes.json});
-  })
+  });
 
   return Promise.resolve(routes);
 }
@@ -33,7 +33,7 @@ function codeTipsPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 
   CodeTips.forEach(tip => {
     routes.push({route: `/code-tips/${tip.link}`, type: RouteTypes.json});
-  })
+  });
 
   return Promise.resolve(routes);
 }
@@ -45,7 +45,7 @@ function pagesPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 
   Pages.forEach(page => {
     routes.push({route: `/${page.link}`, type: RouteTypes.json});
-  })
+  });
 
   return Promise.resolve(routes);
 }
@@ -59,7 +59,7 @@ function tagsPlugin(string, config = {}): Promise<HandledRoute[]> {
     if (post.tags) {
       post.tags.split(',').forEach(tag => {
         tag = tag.replace(/\ /g, '-');
-        if(tags.indexOf(tag) === -1) {
+        if (tags.indexOf(tag) === -1) {
           tags.push(tag);
         }
       });
@@ -79,8 +79,8 @@ registerPlugin('router', 'tags', tagsPlugin);
 
 
 export const config: ScullyConfig = {
-  projectRoot: "./src",
-  projectName: "StaticAngularBlog",
+  projectRoot: './src',
+  projectName: 'StaticAngularBlog',
   outDir: './dist/static',
   routes: {
     '/blog/post/:title': {
