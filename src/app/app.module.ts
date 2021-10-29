@@ -27,6 +27,7 @@ import { CodetipComponent } from './codetip/codetip.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
 import { CodetipBoxComponent } from './components/codetip-box/codetip-box.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { UtterancesDirective } from './directives/utterances.directive';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     CodetipComponent,
     CodeTipsArchiveComponent,
     CodetipBoxComponent,
+    UtterancesDirective,
   ],
   imports: [
     BrowserModule,
