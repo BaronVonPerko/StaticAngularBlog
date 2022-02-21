@@ -6,7 +6,7 @@ categories: github
 tags: github
 ---
 
-If you're like me, you have a personal GitHub account and a personal 
+If you're like me, you have a personal GitHub account and a work 
 one.  Or, maybe you have multiple for some reason.  If you do, 
 then you've surely run into the problem of needing to clone
 a repository on a device that has the credentials saved for a 
