@@ -15,7 +15,7 @@ setPluginConfig(SitemapPlugin, {
   routes: {},
 });
 
-function blogPostPlugin(route: string, config = {}): Promise<HandledRoute[]> {
+function blogPostPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
   Posts.forEach(post => {
@@ -28,7 +28,7 @@ function blogPostPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 registerPlugin('router', 'blogPosts', blogPostPlugin);
 
 
-function codeTipsPlugin(route: string, config = {}): Promise<HandledRoute[]> {
+function codeTipsPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
   CodeTips.forEach(tip => {
@@ -40,7 +40,7 @@ function codeTipsPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 
 registerPlugin('router', 'codeTips', codeTipsPlugin);
 
-function pagesPlugin(route: string, config = {}): Promise<HandledRoute[]> {
+function pagesPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
   Pages.forEach(page => {
@@ -52,13 +52,13 @@ function pagesPlugin(route: string, config = {}): Promise<HandledRoute[]> {
 
 registerPlugin('router', 'pages', pagesPlugin);
 
-function tagsPlugin(string, config = {}): Promise<HandledRoute[]> {
+function tagsPlugin(): Promise<HandledRoute[]> {
   // get all the unique tags
   const tags = [];
   Posts.forEach(post => {
     if (post.tags) {
       post.tags.split(',').forEach(tag => {
-        tag = tag.replace(/\ /g, '-');
+        tag = tag.replace(/ /g, '-');
         if (tags.indexOf(tag) === -1) {
           tags.push(tag);
         }
@@ -95,5 +95,21 @@ export const config: ScullyConfig = {
     '/blog/tag/:tag': {
       type: 'tags',
     },
+  },
+  puppeteerLaunchOptions: {
+    args: [
+      '--disable-gpu',
+      '--renderer',
+      '--no-sandbox',
+      '--no-service-autorun',
+      '--no-experiments',
+      '--no-default-browser-check',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+      '--disable-extensions'
+    ]
   },
 };
