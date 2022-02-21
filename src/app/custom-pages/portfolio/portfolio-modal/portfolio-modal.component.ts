@@ -10,7 +10,8 @@ export class PortfolioModalComponent implements OnInit {
   @Input() portfolioItem: Portfolio;
   @Output() itemClosed = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -11,13 +11,14 @@ export class PortfolioItemComponent implements OnInit {
   @Input() portfolio: Portfolio;
   @Output() openModal = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   get imageSrcMedium(): string {
-    let imageName = this.portfolio.image.split('.');
+    const imageName = this.portfolio.image.split('.');
 
     return `/_assets/images/${imageName[0]}-400.${imageName[1]}`;
   }

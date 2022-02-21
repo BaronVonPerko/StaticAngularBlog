@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PageService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getMenuPages(): Observable<Page[]> {
     return new Observable(subscriber => {

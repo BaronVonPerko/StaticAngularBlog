@@ -1,9 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import Post from '../models/post';
-import {Title} from "@angular/platform-browser";
-import {PageHeadService} from "../services/page-head.service";
+import { PageHeadService } from '../services/page-head.service';
 
 @Component({
   selector: 'app-post',
@@ -14,7 +13,8 @@ export class PostComponent implements OnInit {
   post: Post;
   postUrl: string;
 
-  constructor(private route: ActivatedRoute, private postService: PostService, private pageHeadService: PageHeadService) { }
+  constructor(private route: ActivatedRoute, private postService: PostService, private pageHeadService: PageHeadService) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

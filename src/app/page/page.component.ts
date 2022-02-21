@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { PageService } from '../services/page.service';
 import Page from '../models/page';
-import {PageHeadService} from "../services/page-head.service";
+import { PageHeadService } from '../services/page-head.service';
 
 @Component({
   selector: 'app-page',
@@ -12,7 +12,8 @@ export class PageComponent implements OnInit {
 
   page: Page;
 
-  constructor(private route: ActivatedRoute, private pageService: PageService, private pageHeadService: PageHeadService) { }
+  constructor(private route: ActivatedRoute, private pageService: PageService, private pageHeadService: PageHeadService) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

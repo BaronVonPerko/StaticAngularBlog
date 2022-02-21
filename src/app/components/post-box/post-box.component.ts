@@ -11,9 +11,11 @@ export class PostBoxComponent implements OnInit {
   @Input() post: Post;
   @Input() highlightedTag: string;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService) {
+  }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   get postLink() {
     return `/blog/post/${this.post.link}`;

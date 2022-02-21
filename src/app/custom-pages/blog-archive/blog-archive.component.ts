@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import Post from 'src/app/models/post';
-import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import {PageHeadService} from "../../services/page-head.service";
+import { PageHeadService } from '../../services/page-head.service';
 
 @Component({
   selector: 'app-blog-archive',
@@ -23,7 +21,7 @@ export class BlogArchiveComponent implements OnInit {
 
     this.postService.getTotalNumberOfPosts().subscribe(n => this.totalPosts = n);
 
-    this.pageHeadService.setTitle("Blog");
+    this.pageHeadService.setTitle('Blog');
   }
 
   loadMore() {

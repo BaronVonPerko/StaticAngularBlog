@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getTotalNumberOfPosts(): Observable<number> {
     return of(Posts.Posts.length);

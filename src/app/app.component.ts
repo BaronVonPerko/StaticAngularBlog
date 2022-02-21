@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MenuComponent} from './components/menu/menu.component';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs/operators';
-import {environment} from '../environments/environment';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MenuComponent } from './components/menu/menu.component';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 declare const gtag: Function;
 

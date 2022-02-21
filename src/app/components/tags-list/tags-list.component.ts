@@ -10,7 +10,8 @@ export class TagsListComponent implements OnInit {
   @Input() highlightedTag: string;
   tags: string[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.tags = this.post.tags?.split(',');

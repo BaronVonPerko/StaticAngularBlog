@@ -8,7 +8,8 @@ import { default as CodeTips } from '../../_assets/codetips/codetips.json';
 })
 export class CodetipsService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getCodeTips(): Observable<CodeTip[]> {
     return new Observable(subscriber => {

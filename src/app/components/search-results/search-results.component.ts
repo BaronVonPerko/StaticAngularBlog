@@ -12,7 +12,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
 
   results: Post[] = [];
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService) {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.searchService.search(changes.searchString.currentValue)

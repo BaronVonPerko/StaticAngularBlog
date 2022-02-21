@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class PortfolioService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getPortfolios(): Observable<Portfolio[]> {
     return new Observable(subscriber => {

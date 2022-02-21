@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SecurityContext } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Page from 'src/app/models/page';
 import { IconService } from 'src/app/services/icon.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -10,7 +10,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class MenuItemComponent implements OnInit {
   @Input() page: Page;
 
-  constructor(private iconService: IconService, private sanitizer: DomSanitizer) { }
+  constructor(private iconService: IconService, private sanitizer: DomSanitizer) {
+  }
 
   ngOnInit(): void {
   }

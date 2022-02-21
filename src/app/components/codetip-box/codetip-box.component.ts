@@ -10,7 +10,8 @@ export class CodetipBoxComponent implements OnInit {
 
   @Input() codeTip: CodeTip;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

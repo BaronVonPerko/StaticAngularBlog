@@ -11,21 +11,21 @@
         and frameworks.
       </p>
       <div class="mt-3 max-w-2xl mx-auto text-lg leading-7 sm:mt-4 flex flex-col lg:flex-row justify-between">
-        <a class="cursor-pointer py-2" 
-          [ngClass]="!selectedType ? 'font-bold' : ''"
-          (click)="onClickAll()">
+        <a class="cursor-pointer py-2"
+           [ngClass]="!selectedType ? 'font-bold' : ''"
+           (click)="onClickAll()">
           All
         </a>
         <a class="cursor-pointer py-2"
-          *ngFor="let postType of uniqueTypes"
-          [ngClass]="selectedType == postType ? 'font-bold' : ''"
-          (click)="onTypeClicked(postType)">
+           *ngFor="let postType of uniqueTypes"
+           [ngClass]="selectedType == postType ? 'font-bold' : ''"
+           (click)="onTypeClicked(postType)">
           {{ postType }}
         </a>
       </div>
     </div>
     <app-portfolio-grid>
-      <app-portfolio-item *ngFor="let portfolio of portfolios" 
+      <app-portfolio-item *ngFor="let portfolio of portfolios"
                           (openModal)="selectedItem = portfolio"
                           [portfolio]="portfolio"></app-portfolio-item>
     </app-portfolio-grid>
