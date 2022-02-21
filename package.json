@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "tailwind": "npx tailwindcss -i src/tailwind.css -o src/styles.css --watch",
+    "tailwind": "npx tailwindcss -i src/tailwind.css -o src/styles.css",
+    "tailwind:watch": "npx tailwindcss -i src/tailwind.css -o src/styles.css --watch",
     "resources": "node ./scripts/generatePageIndex.js && node ./scripts/generatePortfolioImageSizes",
     "scully": "scully",
     "scully:serve": "scully serve"
