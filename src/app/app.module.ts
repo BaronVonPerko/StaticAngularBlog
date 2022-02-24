@@ -28,6 +28,8 @@ import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-
 import { CodetipBoxComponent } from './components/codetip-box/codetip-box.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { UtterancesDirective } from './directives/utterances.directive';
+import { ResumeComponent } from './custom-pages/resume/resume.component';
+import { ResumeSectionHeadingComponent } from './custom-pages/resume/section-heading/resume-section-heading.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { UtterancesDirective } from './directives/utterances.directive';
     CodeTipsArchiveComponent,
     CodetipBoxComponent,
     UtterancesDirective,
+    ResumeComponent,
+    ResumeSectionHeadingComponent,
   ],
   imports: [
     BrowserModule,

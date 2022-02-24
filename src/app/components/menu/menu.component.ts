@@ -54,12 +54,21 @@ export class MenuComponent implements OnInit {
       icon: 'md-pencil',
     };
 
+    const resumePage: Page = {
+      inMenu: true,
+      link: '/resume',
+      title: 'Resume',
+      menuTitle: 'Resume',
+      icon: 'md-clipboard',
+    };
+
     this.pageServices.getMenuPages().subscribe((pages) => {
       this.menuPages = [
         blogPage,
         codeTipsArchivePage,
         portfolioPage,
         customizerUiPage,
+        resumePage,
         ...pages,
       ];
     });
