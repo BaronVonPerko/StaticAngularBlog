@@ -56,8 +56,8 @@ export class MenuComponent implements OnInit {
     const resumePage: Page = {
       inMenu: true,
       link: '/resume',
-      title: 'Resume',
-      menuTitle: 'Resume',
+      title: 'Résumé',
+      menuTitle: 'Résumé',
       icon: 'md-clipboard',
     };
 
