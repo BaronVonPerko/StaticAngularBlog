@@ -33,6 +33,7 @@ import { ResumeSectionHeadingComponent } from './custom-pages/resume/section-hea
 import { ResumeExperienceComponent } from './custom-pages/resume/resume-experience/resume-experience.component';
 import { ResumeListComponent } from './custom-pages/resume/resume-list/resume-list.component';
 import { ResumeListItemComponent } from './custom-pages/resume/resume-list/resume-list-item/resume-list-item.component';
+import { ResumeTechStackComponent } from './custom-pages/resume/resume-tech-stack/resume-tech-stack.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { ResumeListItemComponent } from './custom-pages/resume/resume-list/resum
     ResumeExperienceComponent,
     ResumeListComponent,
     ResumeListItemComponent,
+    ResumeTechStackComponent,
   ],
   imports: [
     BrowserModule,
