@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-resume-list',
-  template: ` <ul class="list-disc ml-4">
+  template: ` <ul class="list-disc mx-8">
     <ng-content></ng-content>
   </ul>`,
 })

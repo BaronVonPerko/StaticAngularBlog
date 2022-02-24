@@ -1,10 +1,10 @@
-<section class="mt-8">
-  <div class="uppercase text-slate-400 text-sm font-semibold">
+<section class="mb-12">
+  <div *ngIf="startDate && endDate" class="uppercase text-slate-400 text-sm font-semibold">
     {{startDate}} - {{endDate}}
   </div>
   <div class="text-slate-900 text-base mb-2">
-    <span class="font-bold">{{position}},&nbsp;</span>
-    <span>{{company}},&nbsp;{{location}}</span>
+    <span class="font-bold">{{position}}</span>
+    <span *ngIf="company && location">,&nbsp;{{company}},&nbsp;{{location}}</span>
   </div>
   <div>
     <ng-content></ng-content>
