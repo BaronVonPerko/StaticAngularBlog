@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
+import { IconService } from '../../../services/icon.service';
 
 @Component({
   selector: 'app-resume-experience',
@@ -11,6 +13,15 @@ export class ResumeExperienceComponent {
   @Input() position: string;
   @Input() location: string;
 
-  constructor() { }
+  open = true;
 
+  constructor(private iconService: IconService) { }
+
+  getIcon(icon: string): SafeHtml {
+    return this.iconService.getIconPath(icon);
+  }
+
+  toggle() {
+    this.open = !this.open;
+  }
 }

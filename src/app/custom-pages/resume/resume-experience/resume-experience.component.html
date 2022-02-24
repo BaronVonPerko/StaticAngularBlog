@@ -2,11 +2,18 @@
   <div *ngIf="startDate && endDate" class="uppercase text-slate-400 text-sm font-semibold">
     {{startDate}} - {{endDate}}
   </div>
-  <div class="text-slate-900 text-base mb-2">
+  <div (click)="toggle()" class="text-slate-900 text-base my-2 hover:bg-slate-200 cursor-pointer">
+    <svg class="inline mr-3 h-6 w-6 text-gray-400 group-focus:text-gray-300 transition ease-in-out duration-150 rotate-180"
+         [ngClass]="{'rotate-0': !open}"
+         stroke="currentColor"
+         fill="none"
+         viewBox="0 0 24 24"
+         [innerHTML]="getIcon('md-chevron-down')">
+    </svg>
     <span class="font-bold">{{position}}</span>
     <span *ngIf="company && location">,&nbsp;{{company}},&nbsp;{{location}}</span>
   </div>
-  <div>
+  <div *ngIf="open">
     <ng-content></ng-content>
   </div>
 </section>

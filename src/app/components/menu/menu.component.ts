@@ -3,7 +3,7 @@ import Page from 'src/app/models/page.js';
 import { PageService } from 'src/app/services/page.service';
 import { Router } from '@angular/router';
 import { IconService } from 'src/app/services/icon.service';
-import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-menu',
@@ -16,8 +16,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private pageServices: PageService,
     private router: Router,
-    private iconService: IconService,
-    private sanitizer: DomSanitizer
+    private iconService: IconService
   ) {
   }
 
@@ -83,10 +82,7 @@ export class MenuComponent implements OnInit {
   }
 
   getIcon(icon: string): SafeHtml {
-    const path = this.iconService.getIcon(icon)?.path;
-    if (path) {
-      return this.sanitizer.bypassSecurityTrustHtml(path);
-    }
+    return this.iconService.getIconPath(icon);
   }
 
   get sidebarOverlayClasses(): string {

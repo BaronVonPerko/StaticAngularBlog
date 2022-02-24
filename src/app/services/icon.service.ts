@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 class SvgIcon {
   name: string;
@@ -12,7 +13,7 @@ export class IconService {
 
   icons: SvgIcon[];
 
-  constructor() {
+  constructor(private sanitizer: DomSanitizer) {
     this.icons = [
 
       // https://github.com/sschoger/heroicons-ui
@@ -52,6 +53,10 @@ export class IconService {
         name: 'md-clipboard',
         path: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M8 4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h2zm0 2H6v14h12V6h-2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2zm2-2v2h4V4h-4z"/></svg>'
       },
+      {
+        name: 'md-chevron-down',
+        path: '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>'
+      },
 
       // https://simpleicons.org/
       {
@@ -67,5 +72,12 @@ export class IconService {
 
   getIcon(name: string) {
     return this.icons.find(icon => icon.name === name);
+  }
+
+  getIconPath(icon: string): SafeHtml {
+    const path = this.getIcon(icon)?.path;
+    if (path) {
+      return this.sanitizer.bypassSecurityTrustHtml(path);
+    }
   }
 }
