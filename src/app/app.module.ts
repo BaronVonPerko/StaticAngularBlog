@@ -30,6 +30,9 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { UtterancesDirective } from './directives/utterances.directive';
 import { ResumeComponent } from './custom-pages/resume/resume.component';
 import { ResumeSectionHeadingComponent } from './custom-pages/resume/section-heading/resume-section-heading.component';
+import { ResumeExperienceComponent } from './custom-pages/resume/resume-experience/resume-experience.component';
+import { ResumeListComponent } from './custom-pages/resume/resume-list/resume-list.component';
+import { ResumeListItemComponent } from './custom-pages/resume/resume-list/resume-list-item/resume-list-item.component';
 
 
 @NgModule({
@@ -56,6 +59,9 @@ import { ResumeSectionHeadingComponent } from './custom-pages/resume/section-hea
     UtterancesDirective,
     ResumeComponent,
     ResumeSectionHeadingComponent,
+    ResumeExperienceComponent,
+    ResumeListComponent,
+    ResumeListItemComponent,
   ],
   imports: [
     BrowserModule,
