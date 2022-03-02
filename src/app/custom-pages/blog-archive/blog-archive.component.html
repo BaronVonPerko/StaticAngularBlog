@@ -3,7 +3,7 @@
 <app-post-box *ngFor="let post of posts"
               [post]="post"></app-post-box>
 
-<span *ngIf="hasMorePosts"
+<span *ngIf="posts && hasMorePosts"
       class="inline-flex rounded-md shadow-sm">
     <button type="button"
             (click)="loadMore()"

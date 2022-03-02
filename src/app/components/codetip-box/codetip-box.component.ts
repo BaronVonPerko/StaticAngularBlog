@@ -1,10 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 import CodeTip from 'src/app/models/codetip';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { loadAnimation } from '../../animations/loadAnimation';
 
 @Component({
   selector: 'app-codetip-box',
   templateUrl: './codetip-box.component.html',
-  styles: []
+  styles: [],
+  animations: [
+    trigger('loadingAnimation', [
+      transition(':enter', [useAnimation(loadAnimation)]),
+    ]),
+  ],
 })
 export class CodetipBoxComponent implements OnInit {
 

@@ -5,10 +5,9 @@ import { PageHeadService } from '../../services/page-head.service';
 
 @Component({
   selector: 'app-blog-archive',
-  templateUrl: './blog-archive.component.html'
+  templateUrl: './blog-archive.component.html',
 })
 export class BlogArchiveComponent implements OnInit {
-
   posts: Post[];
   totalPosts: number;
   numPostsToLoad = 5;

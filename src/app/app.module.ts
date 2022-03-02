@@ -34,6 +34,7 @@ import { ResumeExperienceComponent } from './custom-pages/resume/resume-experien
 import { ResumeListComponent } from './custom-pages/resume/resume-list/resume-list.component';
 import { ResumeListItemComponent } from './custom-pages/resume/resume-list/resume-list-item/resume-list-item.component';
 import { ResumeTechStackComponent } from './custom-pages/resume/resume-tech-stack/resume-tech-stack.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ResumeTechStackComponent } from './custom-pages/resume/resume-tech-stac
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),

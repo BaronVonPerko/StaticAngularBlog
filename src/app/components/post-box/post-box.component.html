@@ -1,4 +1,4 @@
-<div class="relative bg-gray-800 my-8">
+<div @loadingAnimation *ngIf="post" class="relative bg-gray-800 my-8">
   <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
     <img class="w-full h-full object-cover"
          [src]="postImage"/>
