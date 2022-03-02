@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { default as Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,27 +16,19 @@ export class PostService {
     return of(Posts.Posts.length);
   }
 
-  getLatestPosts(startIndex = 0, numberToLoad?: number): Observable<Post[]> {
-    return new Observable(subscriber => {
-
-      const posts = Posts.Posts.sort((a: Post, b: Post) => {
-        const aTime = new Date(a.date).getTime();
-        const bTime = new Date(b.date).getTime();
-        return bTime - aTime;
-      });
-
-      subscriber.next(
-        posts.slice(
-          startIndex,
-          numberToLoad ? startIndex + numberToLoad : posts.length
-        )
-      );
+  getLatestPosts(): Observable<Post> {
+    const sortedPosts = Posts.Posts.sort((a: Post, b: Post) => {
+      const aTime = new Date(a.date).getTime();
+      const bTime = new Date(b.date).getTime();
+      return bTime - aTime;
     });
+
+    return from(sortedPosts);
   }
 
-  getPostsForTag(tag: string): Observable<Post[]> {
+  getPostsForTag(tag: string): Observable<Post> {
     return this.getLatestPosts().pipe(
-      map(posts => posts.filter(post => post.tags?.indexOf(tag) > -1))
+      filter(post => post.tags?.indexOf(tag) > -1)
     );
   }
 
