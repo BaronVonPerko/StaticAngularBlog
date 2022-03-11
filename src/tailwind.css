@@ -5,7 +5,11 @@
 @tailwind utilities;
 
 a {
-    @apply text-teal-600 underline;
+    @apply text-cyan-600 underline;
+}
+
+a:hover {
+  @apply text-cyan-100 bg-cyan-800 no-underline;
 }
 
 h1 {

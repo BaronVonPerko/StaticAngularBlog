@@ -1,19 +1,19 @@
 <div class="absolute inset-x-0 z-20">
-  <div class="bg-white shadow overflow-hidden">
+  <div class="bg-slate-100 shadow-lg overflow-hidden">
     <ul>
       <li *ngFor="let result of results">
         <a [routerLink]="getLink(result)"
            class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
           <div class="px-4 py-4 sm:px-6">
             <div class="flex items-center justify-between">
-              <div class="text-lg leading-5 font-bold text-indigo-800 truncate">
+              <div class="text-lg leading-5 font-bold text-cyan-600 truncate">
                 {{ result.title }}
               </div>
             </div>
             <div class="mt-2 sm:flex sm:justify-between">
               <div class="sm:flex">
                                 <span *ngFor="let tag of result.tags?.split(',')"
-                                      class="mr-2 px-2 inline-flex text-xs leading-5 rounded-full bg-indigo-100 text-indigo-800 font-semibold">
+                                      class="mr-2 px-2 inline-flex text-xs leading-5 rounded-full bg-cyan-300 text-cyan-600 font-semibold">
                                     #{{tag}}
                                 </span>
               </div>

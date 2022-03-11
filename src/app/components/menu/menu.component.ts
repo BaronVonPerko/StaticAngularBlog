@@ -11,7 +11,7 @@ import { SafeHtml } from '@angular/platform-browser';
 })
 export class MenuComponent implements OnInit {
   menuPages: Page[] = [];
-  sidebarOpen = false;
+  sidebarOpen = true;
 
   constructor(
     private pageServices: PageService,
@@ -78,6 +78,7 @@ export class MenuComponent implements OnInit {
   }
 
   goHome() {
+    this.sidebarOpen = false;
     this.router.navigateByUrl('/');
   }
 
@@ -87,7 +88,7 @@ export class MenuComponent implements OnInit {
 
   get sidebarOverlayClasses(): string {
     const baseClasses =
-      'fixed inset-0 z-30 bg-gray-600 opacity-0 pointer-events-none transition-opacity ease-linear duration-300';
+      'fixed inset-0 z-30 bg-cyan-100 opacity-0 pointer-events-none transition-opacity ease-linear duration-300';
     const dynamicClasses = this.sidebarOpen
       ? 'opacity-75 pointer-events-auto'
       : 'opacity-0 pointer-events-none';
@@ -97,7 +98,7 @@ export class MenuComponent implements OnInit {
 
   get sidebarClasses(): string {
     const baseClasses =
-      'fixed inset-y-0 left-0 flex flex-col z-40 max-w-xs w-full bg-gray-800 transform ease-in-out duration-300';
+      'fixed inset-y-0 left-0 flex flex-col z-40 max-w-xs w-full bg-cyan-600 transform ease-in-out duration-300';
     const dynamicClasses = this.sidebarOpen
       ? 'translate-x-0'
       : '-translate-x-full';

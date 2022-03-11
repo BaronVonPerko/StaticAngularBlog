@@ -1,14 +1,14 @@
-<ngx-loading-bar [includeSpinner]="false"
+<ngx-loading-bar color="#22d3ee" [includeSpinner]="false"
                  [includeBar]="true"></ngx-loading-bar>
 
-<div class="h-screen flex overflow-hidden bg-gray-100">
+<div class="h-screen flex overflow-hidden bg-slate-100">
 
   <app-menu #theMenu></app-menu>
 
   <div class="flex flex-col w-0 flex-1 overflow-hidden">
-    <div class="relative shrink-0 flex h-16 bg-white shadow">
+    <div class="relative shrink-0 flex h-16 bg-slate-100 shadow-lg">
       <button (click)="openSidebar()"
-              class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden">
+              class="px-4 border-r border-cyan-200 text-cyan-500 focus:outline-none focus:bg-cyan-100 focus:text-cyan-600">
         <svg class="h-6 w-6"
              stroke="currentColor"
              fill="none"
@@ -24,7 +24,7 @@
           <div class="w-full flex md:ml-0">
             <label for="search_field"
                    class="sr-only">Search</label>
-            <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+            <div class="relative w-full text-cyan-400 focus-within:text-cyan-600">
               <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                 <svg class="h-5 w-5"
                      fill="currentColor"
@@ -38,7 +38,7 @@
                      (input)="onSearchChanged($event.target.value)"
                      (blur)="saveSearchString()"
                      (focus)="restoreSearchString()"
-                     class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
+                     class="block bg-slate-100 w-full h-full pl-8 pr-3 py-2 rounded-md text-cyan-600 placeholder-cyan-500 focus:outline-none focus:placeholder-cyan-400 sm:text-sm"
                      placeholder="Search"/>
               <app-search-results *ngIf="searchString"
                                   [searchString]="searchString"></app-search-results>
