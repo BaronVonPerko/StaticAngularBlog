@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
       link: '/blog',
       title: 'Blog',
       menuTitle: 'Blog',
-      icon: 'md-collection',
+      icon: 'description',
     };
 
     const codeTipsArchivePage: Page = {
@@ -34,7 +34,7 @@ export class MenuComponent implements OnInit {
       link: '/code-tips',
       title: 'Code Tips',
       menuTitle: 'Code Tips',
-      icon: 'md-collection',
+      icon: 'lightbulb',
     };
 
     const portfolioPage: Page = {
@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
       link: '/portfolio',
       title: 'Portfolio',
       menuTitle: 'Portfolio',
-      icon: 'md-camera',
+      icon: 'image',
     };
 
     const customizerUiPage: Page = {
@@ -50,7 +50,7 @@ export class MenuComponent implements OnInit {
       link: '/wpcui',
       title: 'Customizer UI Plugin for WordPress Developers',
       menuTitle: 'Customizer UI Plugin',
-      icon: 'md-pencil',
+      icon: 'brush',
     };
 
     const resumePage: Page = {
@@ -58,7 +58,7 @@ export class MenuComponent implements OnInit {
       link: '/resume',
       title: 'Résumé',
       menuTitle: 'Résumé',
-      icon: 'md-clipboard',
+      icon: 'receipt_long',
     };
 
     this.pageServices.getMenuPages().subscribe((pages) => {

@@ -2,7 +2,7 @@
 title: About Me
 inMenu: true
 menuTitle:
-icon: 'md-emoji-happy'
+icon: 'help'
 ---
 !["alt text here"](assets/images/profile.jpg)
 

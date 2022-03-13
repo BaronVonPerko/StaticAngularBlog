@@ -10,17 +10,11 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class MenuItemComponent implements OnInit {
   @Input() page: Page;
 
-  constructor(private iconService: IconService, private sanitizer: DomSanitizer) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  get icon(): SafeHtml {
-    const path = this.iconService.getIcon(this.page.icon)?.path;
-    if (path) {
-      return this.sanitizer.bypassSecurityTrustHtml(path);
-    }
-  }
 
 }

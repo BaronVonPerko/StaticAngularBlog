@@ -1,9 +1,7 @@
-<a [routerLink]="page.link" routerLinkActive="bg-cyan-700 text-slate-200"
+<a mat-list-item [routerLink]="page.link" routerLinkActive="bg-cyan-700 text-slate-200"
    class="no-underline mt-1 group flex items-center px-2 py-2 text-md leading-5 font-medium text-cyan-900 rounded-md hover:text-cyan-200 hover:bg-cyan-700 focus:outline-none focus:text-slate-100 focus:bg-cyan-700 transition ease-in-out duration-150">
 
-  <svg class="mr-3 h-6 w-6 text-cyan-200 group-focus:text-cyan-300 transition ease-in-out duration-150"
-       stroke="currentColor" fill="none" viewBox="0 0 24 24" [innerHTML]="icon">
-  </svg>
+  <mat-icon>{{page.icon}}</mat-icon>
 
   {{page.menuTitle}}
 </a>

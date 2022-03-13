@@ -35,6 +35,13 @@ import { ResumeListComponent } from './custom-pages/resume/resume-list/resume-li
 import { ResumeListItemComponent } from './custom-pages/resume/resume-list/resume-list-item/resume-list-item.component';
 import { ResumeTechStackComponent } from './custom-pages/resume/resume-tech-stack/resume-tech-stack.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -65,6 +72,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ResumeListComponent,
     ResumeListItemComponent,
     ResumeTechStackComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +83,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
     LoadingBarModule,
-    ScullyLibModule
+    ScullyLibModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

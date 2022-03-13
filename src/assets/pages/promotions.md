@@ -2,7 +2,7 @@
 title: Promotions
 inMenu: true
 menuTitle: 
-icon: md-tag
+icon: shopping_bag
 ---
 
 ### Want to support me and get free stuff at the same time?  Try out one of these promotions!

@@ -1,54 +1,11 @@
-<div>
-  <div (click)="sidebarOpen = false"
-       [className]="sidebarOverlayClasses">
-  </div>
-  <div [className]="sidebarClasses">
-    <div class="absolute top-0 right-0 -mr-14 p-1">
-      <button *ngIf="sidebarOpen"
-              (click)="sidebarOpen = false"
-              class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-cyan-600">
-        <svg class="h-6 w-6 text-slate-100"
-             stroke="currentColor"
-             fill="none"
-             viewBox="0 0 24 24">
-          <path stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </div>
-    <div class="shrink-0 flex items-center justify-center align-middle h-32 px-4 bg-cyan-700">
-      <h1 (click)="goHome()" class="uppercase text-cyan-400 hover:text-cyan-200 transition-all duration-150 mb-0 cursor-pointer">Chris Perko</h1>
-    </div>
-    <div class="flex-1 h-0 overflow-y-auto">
-      <nav class="px-2 py-4">
-        <div class="mb-16 flex justify-center">
-          <a href="https://twitter.com/chrisjperko" class="hover:bg-transparent"
-             target="_blank">
-            <svg class="mx-3 h-6 w-6 text-cyan-300 transition ease-in-out duration-150"
-                 stroke="currentColor"
-                 fill="none"
-                 viewBox="0 0 24 24"
-                 [innerHTML]="getIcon('social-twitter')">
-            </svg>
-          </a>
-          <a href="https://github.com/baronvonperko" class="hover:bg-transparent"
-             target="_blank">
-            <svg class="mx-3 h-6 w-6 text-cyan-300 transition ease-in-out duration-150"
-                 stroke="currentColor"
-                 fill="none"
-                 viewBox="0 0 24 24"
-                 [innerHTML]="getIcon('social-github')">
-            </svg>
-          </a>
-        </div>
-        <app-menu-item *ngFor="let page of menuPages"
-                       (click)="sidebarOpen = false"
-                       [page]="page">
-        </app-menu-item>
-      </nav>
-    </div>
-  </div>
-</div>
+<mat-nav-list>
+  <a mat-list-item href="/">
+    <mat-icon>home</mat-icon>
+    Home
+  </a>
+  <app-menu-item *ngFor="let page of menuPages"
+                 (click)="sidebarOpen = false"
+                 [page]="page">
+  </app-menu-item>
+</mat-nav-list>
 

@@ -2,7 +2,7 @@
 title: Contact Me
 inMenu: true
 menuTitle: Contact
-icon: md-chat
+icon: phone
 ---
 Feel free to email me at [chris@chrisperko.net](mailto:chris@chrisperko.net), call 
 me at [470.500.5945](tel:4705005945), or tweet me [@chrisjperko](https://twitter.com/chrisjperko). 
