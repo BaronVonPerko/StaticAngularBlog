@@ -3,13 +3,10 @@
     {{startDate}} - {{endDate}}
   </div>
   <div (click)="toggle()" class="text-slate-900 text-base my-2 hover:bg-slate-200 cursor-pointer">
-    <svg class="inline mr-3 h-6 w-6 text-gray-400 group-focus:text-gray-300 transition ease-in-out duration-150 rotate-180"
-         [ngClass]="{'rotate-0': !open}"
-         stroke="currentColor"
-         fill="none"
-         viewBox="0 0 24 24"
-         [innerHTML]="getIcon('md-chevron-down')">
-    </svg>
+    <mat-icon *ngIf="open; else expandMore">expand_less</mat-icon>
+    <ng-template #expandMore>
+      <mat-icon>expand_more</mat-icon>
+    </ng-template>
     <span class="font-bold">{{position}}</span>
     <span *ngIf="company && location">,&nbsp;{{company}},&nbsp;{{location}}</span>
   </div>

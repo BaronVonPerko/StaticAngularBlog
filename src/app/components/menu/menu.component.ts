@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import Page from 'src/app/models/page.js';
 import { PageService } from 'src/app/services/page.service';
 import { Router } from '@angular/router';
-import { IconService } from 'src/app/services/icon.service';
 import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -16,7 +15,6 @@ export class MenuComponent implements OnInit {
   constructor(
     private pageServices: PageService,
     private router: Router,
-    private iconService: IconService
   ) {
   }
 
@@ -73,36 +71,4 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  openSidebar() {
-    this.sidebarOpen = true;
-  }
-
-  goHome() {
-    this.sidebarOpen = false;
-    this.router.navigateByUrl('/');
-  }
-
-  getIcon(icon: string): SafeHtml {
-    return this.iconService.getIconPath(icon);
-  }
-
-  get sidebarOverlayClasses(): string {
-    const baseClasses =
-      'fixed inset-0 z-30 bg-cyan-100 opacity-0 pointer-events-none transition-opacity ease-linear duration-300';
-    const dynamicClasses = this.sidebarOpen
-      ? 'opacity-75 pointer-events-auto'
-      : 'opacity-0 pointer-events-none';
-
-    return `${baseClasses} ${dynamicClasses}`;
-  }
-
-  get sidebarClasses(): string {
-    const baseClasses =
-      'fixed inset-y-0 left-0 flex flex-col z-40 max-w-xs w-full bg-cyan-600 transform ease-in-out duration-300';
-    const dynamicClasses = this.sidebarOpen
-      ? 'translate-x-0'
-      : '-translate-x-full';
-
-    return `${baseClasses} ${dynamicClasses}`;
-  }
 }
