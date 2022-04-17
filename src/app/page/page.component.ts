@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PageService } from '../services/page.service';
 import Page from '../models/page';
 import { PageHeadService } from '../services/page-head.service';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page',
@@ -10,22 +12,23 @@ import { PageHeadService } from '../services/page-head.service';
 })
 export class PageComponent implements OnInit {
 
-  page: Page;
+  page$!: Observable<Page>;
+  pageUrl: string;
 
-  constructor(private route: ActivatedRoute, private pageService: PageService, private pageHeadService: PageHeadService) {
+  constructor(private route: ActivatedRoute,
+              private pageService: PageService,
+              private pageHeadService: PageHeadService) {
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.pageService.getPageDetails(params.page)
-        .subscribe(details => this.page = details);
-
-      this.pageHeadService.setTitle(this.page.title);
+      this.page$ = this.pageService.getPageDetails(params.page).pipe(
+        tap(page => {
+          this.pageHeadService.setTitle(page.title);
+          this.pageUrl = `/_assets/pages/${page.filename}`;
+        })
+      );
     });
-  }
-
-  get pageUrl() {
-    return `/_assets/pages/${this.page.filename}`;
   }
 
 }
