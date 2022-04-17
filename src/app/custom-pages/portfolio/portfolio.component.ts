@@ -2,38 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import Portfolio from 'src/app/models/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { PageHeadService } from '../../services/page-head.service';
+import {flatMap, mergeMap, Observable, Subject, tap, toArray} from "rxjs";
+import {filter, map} from "rxjs/operators";
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
 })
 export class PortfolioComponent implements OnInit {
-  portfolios: Portfolio[] = [];
+  portfolios$: Observable<Portfolio[]>;
+  uniqueTypes$: Observable<string[]>;
   selectedItem: Portfolio;
-  uniqueTypes: string[];
-  selectedType: string;
+  selectedType$: Subject<string>;
 
   constructor(private portfolioService: PortfolioService, private pageHeadService: PageHeadService) {
   }
 
   ngOnInit(): void {
-    this.loadAllPortfolios();
-    this.portfolioService.getUniqueTypes().subscribe(types => this.uniqueTypes = types);
+    this.portfolios$ = this.portfolioService.getPortfolios().pipe(
+      tap(p => console.log(p)),
+      tap(p => console.log(this.selectedType$)),
+      map(portfolios => portfolios.filter(portfolio => portfolio.type === this.selectedType$))
+    );
+    this.uniqueTypes$ = this.portfolioService.getUniqueTypes();
     this.pageHeadService.setTitle('Portfolio');
   }
 
   onTypeClicked(selectedType) {
-    this.selectedType = selectedType;
-    this.portfolioService.getPortfoliosOfType(selectedType).subscribe(portfolios => this.portfolios = portfolios);
+    this.selectedType$.next(selectedType);
   }
 
   onClickAll() {
-    this.loadAllPortfolios();
-    this.selectedType = null;
-  }
-
-  loadAllPortfolios() {
-    this.portfolioService.getPortfolios().subscribe(portfolios => this.portfolios = portfolios);
+    // this.loadAllPortfolios();
+    // this.selectedType = null;
   }
 
 }
