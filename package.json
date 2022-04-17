@@ -33,7 +33,7 @@
     "@scullyio/scully-plugin-puppeteer": "^2.1.14",
     "fast-xml-parser": "^3.17.4",
     "ngx-markdown": "^13.1.0",
-    "rxjs": "^6.5.5",
+    "rxjs": "^7.1.0",
     "sharp": "^0.29.1",
     "tslib": "^2.0.0",
     "xmlbuilder": "^15.1.1",
