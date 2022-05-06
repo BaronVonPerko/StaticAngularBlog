@@ -15,6 +15,11 @@ Install dependencies:
 npm install
 ```
 
+Generate stylesheet from Tailwind:
+```bash
+npm run tailwind
+```
+
 Run the server
 ```bash
 npm start
