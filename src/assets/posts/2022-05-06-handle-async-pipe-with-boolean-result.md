@@ -2,8 +2,8 @@
 date: 2022-05-06
 title: Handling Async Pipe with Boolean Result
 image: angular-rxjs.jpg
-categories: angular, rxjs
-tags: rxjs, angular
+categories: angular,rxjs
+tags: rxjs,angular
 ---
 
 The [async pipe](https://seedpro-dv.corteva.com/#/permField/addPermField?pchsId=PRI1-010-2021-3) is a powerful tool that helps you subscribe to observables within your Angular application, and not need to worry about cleaning them up when the component is destroyed.  
