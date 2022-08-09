@@ -8,7 +8,7 @@ import { IconService } from '../../../services/icon.service';
 })
 export class ResumeExperienceComponent {
   @Input() startDate: string;
-  @Input() endDate: string;
+  @Input() endDate = 'Present';
   @Input() company: string;
   @Input() position: string;
   @Input() location: string;
