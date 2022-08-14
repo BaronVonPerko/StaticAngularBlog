@@ -1,4 +1,4 @@
 <h1 class="text-indigo-600">Code Tips</h1>
 
-<app-codetip-box *ngFor="let tip of codeTips"
+<app-codetip-box *ngFor="let tip of codeTips$ | async"
                  [codeTip]="tip"></app-codetip-box>

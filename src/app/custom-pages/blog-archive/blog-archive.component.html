@@ -1,13 +1,15 @@
-<h1 class="text-indigo-600">Latest Posts</h1>
+<ng-container *ngIf="posts$ | async; let posts">
+  <h1 class="text-indigo-600">Latest Posts</h1>
 
-<app-post-box *ngFor="let post of posts"
-              [post]="post"></app-post-box>
+  <app-post-box *ngFor="let post of posts"
+                [post]="post"></app-post-box>
 
-<span *ngIf="posts && hasMorePosts"
-      class="inline-flex rounded-md shadow-sm">
+  <span *ngIf="hasMore$ | async"
+        class="inline-flex rounded-md shadow-sm">
     <button type="button"
             (click)="loadMore()"
             class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring-indigo active:bg-indigo-700 transition ease-in-out duration-150">
         Load More
     </button>
 </span>
+</ng-container>

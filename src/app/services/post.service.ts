@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { default as Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
-import { from, Observable, of } from 'rxjs';
+import { mergeMap, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,22 +12,19 @@ export class PostService {
   constructor() {
   }
 
-  getTotalNumberOfPosts(): Observable<number> {
-    return of(Posts.Posts.length);
-  }
-
-  getLatestPosts(): Observable<Post> {
+  getLatestPosts(): Observable<Post[]> {
     const sortedPosts = Posts.Posts.sort((a: Post, b: Post) => {
       const aTime = new Date(a.date).getTime();
       const bTime = new Date(b.date).getTime();
       return bTime - aTime;
     });
 
-    return from(sortedPosts);
+    return of(sortedPosts);
   }
 
   getPostsForTag(tag: string): Observable<Post> {
     return this.getLatestPosts().pipe(
+      mergeMap(p => p),
       filter(post => post.tags?.indexOf(tag) > -1)
     );
   }

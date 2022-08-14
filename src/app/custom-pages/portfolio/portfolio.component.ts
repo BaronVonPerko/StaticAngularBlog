@@ -1,39 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import Portfolio from 'src/app/models/portfolio';
-import { PortfolioService } from 'src/app/services/portfolio.service';
-import { PageHeadService } from '../../services/page-head.service';
+import {PortfolioService} from 'src/app/services/portfolio.service';
+import {PageHeadService} from '../../services/page-head.service';
+import {flatMap, mergeMap, Observable, BehaviorSubject, Subject, tap, toArray} from "rxjs";
+import {filter, map, takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
 })
-export class PortfolioComponent implements OnInit {
-  portfolios: Portfolio[] = [];
+export class PortfolioComponent implements OnInit, OnDestroy {
+  portfolios$: Observable<Portfolio[]>;
+  uniqueTypes$: Observable<string[]>;
+  selectedType$ = new BehaviorSubject<string>('All');
+  onDestroy$ = new Subject();
   selectedItem: Portfolio;
-  uniqueTypes: string[];
-  selectedType: string;
 
   constructor(private portfolioService: PortfolioService, private pageHeadService: PageHeadService) {
   }
 
   ngOnInit(): void {
-    this.loadAllPortfolios();
-    this.portfolioService.getUniqueTypes().subscribe(types => this.uniqueTypes = types);
+    this.selectedType$.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(selectedType => {
+      this.portfolios$ = this.portfolioService.getPortfolios().pipe(
+        map(portfolios => {
+            if (selectedType !== 'All') {
+              return portfolios.filter(portfolio => portfolio.type === selectedType)
+            }
+            return portfolios;
+          }
+        )
+      );
+    })
+
+    this.uniqueTypes$ = this.portfolioService.getUniqueTypes();
     this.pageHeadService.setTitle('Portfolio');
   }
 
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+  }
+
   onTypeClicked(selectedType) {
-    this.selectedType = selectedType;
-    this.portfolioService.getPortfoliosOfType(selectedType).subscribe(portfolios => this.portfolios = portfolios);
-  }
-
-  onClickAll() {
-    this.loadAllPortfolios();
-    this.selectedType = null;
-  }
-
-  loadAllPortfolios() {
-    this.portfolioService.getPortfolios().subscribe(portfolios => this.portfolios = portfolios);
+    this.selectedType$.next(selectedType);
   }
 
 }

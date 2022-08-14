@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { default as Portfolios } from '../../_assets/portfolio/portfolio.json';
 import Portfolio from '../models/portfolio';
-import { Observable } from 'rxjs';
+import {Observable, of, switchMap, toArray} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -13,19 +13,15 @@ export class PortfolioService {
   }
 
   getPortfolios(): Observable<Portfolio[]> {
-    return new Observable(subscriber => {
-      subscriber.next(Portfolios.Portfolios);
-    });
-  }
-
-  getPortfoliosOfType(selectedType): Observable<Portfolio[]> {
-    return this.getPortfolios().pipe(map(data => data.filter(item => item.type === selectedType)));
+    return of(Portfolios.Portfolios);
   }
 
   getUniqueTypes(): Observable<string[]> {
-    return new Observable(subscriber => {
-      const types = [...new Set(Portfolios.Portfolios.map(portfolio => portfolio.type))];
-      subscriber.next(types);
-    });
+    return this.getPortfolios().pipe(
+      switchMap(portfolios => {
+        return [...new Set(portfolios.map(portfolio => portfolio.type))];
+      }),
+      toArray()
+    );
   }
 }

@@ -4,13 +4,15 @@ import { PageService } from 'src/app/services/page.service';
 import { Router } from '@angular/router';
 import { IconService } from 'src/app/services/icon.service';
 import { SafeHtml } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
 })
 export class MenuComponent implements OnInit {
-  menuPages: Page[] = [];
+  menuPages$!: Observable<Page[]>;
   sidebarOpen = false;
 
   constructor(
@@ -61,16 +63,18 @@ export class MenuComponent implements OnInit {
       icon: 'md-clipboard',
     };
 
-    this.pageServices.getMenuPages().subscribe((pages) => {
-      this.menuPages = [
-        blogPage,
-        codeTipsArchivePage,
-        portfolioPage,
-        customizerUiPage,
-        resumePage,
-        ...pages,
-      ];
-    });
+    this.menuPages$ = this.pageServices.getMenuPages().pipe(
+      map(pages => {
+        return [
+          blogPage,
+          codeTipsArchivePage,
+          portfolioPage,
+          customizerUiPage,
+          resumePage,
+          ...pages
+        ];
+      }),
+    );
   }
 
   openSidebar() {

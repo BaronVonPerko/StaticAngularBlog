@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
       gtag('event', 'page_view', {
         page_path: event.urlAfterRedirects
       });
+      this.searchString = '';
     });
   }
 
@@ -36,11 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   saveSearchString() {
-    // if a search result is clicked, give time to change route
-    setTimeout(() => {
-      this.savedSearchString = this.searchString;
-      this.searchString = null;
-    }, 100);
+    this.savedSearchString = this.searchString;
   }
 
   restoreSearchString() {

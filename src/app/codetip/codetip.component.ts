@@ -2,31 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CodetipsService } from '../services/codetips.service';
 import CodeTip from '../models/codetip';
+import {Observable} from "rxjs";
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-codetip',
   styles: [],
   template: `
-  <div class="content">
+  <div class="content" *ngIf="codeTip$ | async; let codeTip">
     <h1 class="text-center">{{codeTip.title}}</h1>
     <img class="mx-auto" [src]="imageUrl">
   </div>`
 })
 export class CodetipComponent implements OnInit {
 
-  codeTip: CodeTip;
+  codeTip$: Observable<CodeTip>;
+  imageUrl!: string;
 
   constructor(private route: ActivatedRoute, private codeTipService: CodetipsService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.codeTipService.getCodeTipDetails(params.title)
-        .subscribe(codeTip => this.codeTip = codeTip);
+      this.codeTip$ = this.codeTipService.getCodeTipDetails(params.title).pipe(
+        tap(tip => this.imageUrl = `/assets/images/${tip.image}`)
+      );
     });
   }
-
-  get imageUrl() {
-    return `/assets/images/${this.codeTip.image}`;
-  }
-
 }
