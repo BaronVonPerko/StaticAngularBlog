@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install NPM Dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     - name: Setup blog resources
       run: npm run resources 
