@@ -18,10 +18,6 @@ import { TagsListComponent } from './components/tags-list/tags-list.component';
 import { TagArchiveComponent } from './custom-pages/tag-archive/tag-archive.component';
 import { PostBoxComponent } from './components/post-box/post-box.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { PortfolioComponent } from './custom-pages/portfolio/portfolio.component';
-import { PortfolioGridComponent } from './custom-pages/portfolio/portfolio-grid/portfolio-grid.component';
-import { PortfolioItemComponent } from './custom-pages/portfolio/portfolio-item/portfolio-item.component';
-import { PortfolioModalComponent } from './custom-pages/portfolio/portfolio-modal/portfolio-modal.component';
 import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 import { CodetipComponent } from './codetip/codetip.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
@@ -50,10 +46,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TagsListComponent,
     TagArchiveComponent,
     SearchResultsComponent,
-    PortfolioComponent,
-    PortfolioGridComponent,
-    PortfolioItemComponent,
-    PortfolioModalComponent,
     WpcuiComponent,
     CodetipComponent,
     CodeTipsArchiveComponent,
