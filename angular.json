@@ -139,6 +139,7 @@
       }
     }
   },
+  "defaultProject": "StaticAngularBlog",
   "cli": {
     "analytics": "ca4b7ca0-9905-4b63-a5fb-19271210f055"
   }
