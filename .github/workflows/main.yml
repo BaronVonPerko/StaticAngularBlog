@@ -29,9 +29,12 @@ jobs:
 
     - name: Install NPM Dependencies
       run: npm install --legacy-peer-deps
+      
+    - name: Install puppeteer
+      run: npm install @scullyio/scully-plugin-puppeteer
 
     - name: Setup blog resources
-      run: npm run resources
+      run: npm run resources 
 
     - name: Generate stylesheet
       run: npm run tailwind
