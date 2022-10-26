@@ -1,15 +1,24 @@
 // https://nartc.me/blog/add-utterances-comments-scully
 
-import { AfterViewInit, Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  Input,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[appUtterances]',
+  standalone: true,
 })
 export class UtterancesDirective implements AfterViewInit {
   @Input() appUtterances: string; // the blog title used for the issue name
 
-  constructor(private readonly renderer: Renderer2, private readonly el: ElementRef) {
-  }
+  constructor(
+    private readonly renderer: Renderer2,
+    private readonly el: ElementRef
+  ) {}
 
   ngAfterViewInit() {
     try {

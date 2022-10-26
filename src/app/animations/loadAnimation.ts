@@ -1,10 +1,4 @@
-import {
-  animate,
-  animation,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, animation, style } from '@angular/animations';
 
 export const loadAnimation = animation([
   style({
