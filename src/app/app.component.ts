@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuComponent } from './components/menu/menu.component';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 declare const gtag: Function;
@@ -10,23 +10,22 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  @ViewChild(MenuComponent, {static: false}) theMenu;
+  @ViewChild(MenuComponent, { static: false }) theMenu;
   searchString = '';
   savedSearchString = '';
 
   constructor(private router: Router) {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      gtag('event', 'page_view', {
-        page_path: event.urlAfterRedirects
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        gtag('event', 'page_view', {
+          page_path: event.urlAfterRedirects,
+        });
+        this.searchString = '';
       });
-      this.searchString = '';
-    });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   openSidebar() {
     this.theMenu.openSidebar();
