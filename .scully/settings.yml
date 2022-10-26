@@ -5,7 +5,7 @@ staticPort: 1668
 reloadPort: 2667
 hostName: localhost
 projectName: StaticAngularBlog
-homeFolder: /home/cperko/code/staticangularblog
+homeFolder: C:\Users\chris\code\StaticAngularBlog
 distFolder: dist/StaticAngularBlog
-outDir: /home/cperko/code/staticangularblog/dist/static
+outDir: C:\Users\chris\code\StaticAngularBlog\dist\static
 handle404: ''
