@@ -30,7 +30,7 @@
     "@ngx-loading-bar/router": "^4.2.0",
     "@scullyio/ng-lib": "^2.1.41",
     "@scullyio/scully": "^2.1.41",
-    "@scullyio/scully-plugin-puppeteer": "^2.1.41",
+    "@scullyio/scully-plugin-playwright": "^2.1.41",
     "fast-xml-parser": "^3.17.4",
     "ngx-markdown": "^13.1.0",
     "rxjs": "^7.1.0",
