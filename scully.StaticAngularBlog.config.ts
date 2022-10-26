@@ -1,9 +1,15 @@
-import {HandledRoute, registerPlugin, RouteTypes, ScullyConfig, setPluginConfig} from '@scullyio/scully';
-
-import {Posts} from './src/_assets/posts/posts.json';
-import {CodeTips} from './src/_assets/codetips/codetips.json';
-import {Pages} from './src/_assets/pages/pages.json';
-import {getSitemapPlugin} from '@gammastream/scully-plugin-sitemap';
+import {
+  HandledRoute,
+  registerPlugin,
+  RouteTypes,
+  ScullyConfig,
+  setPluginConfig,
+} from '@scullyio/scully';
+import '@scullyio/scully-plugin-playwright';
+import { Posts } from './src/_assets/posts/posts.json';
+import { CodeTips } from './src/_assets/codetips/codetips.json';
+import { Pages } from './src/_assets/pages/pages.json';
+import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
 
 const SitemapPlugin = getSitemapPlugin();
 
@@ -18,8 +24,8 @@ setPluginConfig(SitemapPlugin, {
 function blogPostPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
-  Posts.forEach(post => {
-    routes.push({route: `/blog/post/${post.link}`, type: RouteTypes.json});
+  Posts.forEach((post) => {
+    routes.push({ route: `/blog/post/${post.link}`, type: RouteTypes.json });
   });
 
   return Promise.resolve(routes);
@@ -27,12 +33,11 @@ function blogPostPlugin(): Promise<HandledRoute[]> {
 
 registerPlugin('router', 'blogPosts', blogPostPlugin);
 
-
 function codeTipsPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
-  CodeTips.forEach(tip => {
-    routes.push({route: `/code-tips/${tip.link}`, type: RouteTypes.json});
+  CodeTips.forEach((tip) => {
+    routes.push({ route: `/code-tips/${tip.link}`, type: RouteTypes.json });
   });
 
   return Promise.resolve(routes);
@@ -43,8 +48,8 @@ registerPlugin('router', 'codeTips', codeTipsPlugin);
 function pagesPlugin(): Promise<HandledRoute[]> {
   const routes = [];
 
-  Pages.forEach(page => {
-    routes.push({route: `/${page.link}`, type: RouteTypes.json});
+  Pages.forEach((page) => {
+    routes.push({ route: `/${page.link}`, type: RouteTypes.json });
   });
 
   return Promise.resolve(routes);
@@ -55,9 +60,9 @@ registerPlugin('router', 'pages', pagesPlugin);
 function tagsPlugin(): Promise<HandledRoute[]> {
   // get all the unique tags
   const tags = [];
-  Posts.forEach(post => {
+  Posts.forEach((post) => {
     if (post.tags) {
-      post.tags.split(',').forEach(tag => {
+      post.tags.split(',').forEach((tag) => {
         tag = tag.replace(/ /g, '-');
         if (tags.indexOf(tag) === -1) {
           tags.push(tag);
@@ -68,15 +73,14 @@ function tagsPlugin(): Promise<HandledRoute[]> {
 
   // build the routes
   const routes = [];
-  tags.forEach(tag => {
-    routes.push({route: `/blog/tag/${tag}`, type: RouteTypes.json});
+  tags.forEach((tag) => {
+    routes.push({ route: `/blog/tag/${tag}`, type: RouteTypes.json });
   });
 
   return Promise.resolve(routes);
 }
 
 registerPlugin('router', 'tags', tagsPlugin);
-
 
 export const config: ScullyConfig = {
   projectRoot: './src',
@@ -95,21 +99,5 @@ export const config: ScullyConfig = {
     '/blog/tag/:tag': {
       type: 'tags',
     },
-  },
-  puppeteerLaunchOptions: {
-    args: [
-      '--disable-gpu',
-      '--renderer',
-      '--no-sandbox',
-      '--no-service-autorun',
-      '--no-experiments',
-      '--no-default-browser-check',
-      '--disable-dev-shm-usage',
-      '--disable-setuid-sandbox',
-      '--no-first-run',
-      '--no-zygote',
-      '--single-process',
-      '--disable-extensions'
-    ]
   },
 };
