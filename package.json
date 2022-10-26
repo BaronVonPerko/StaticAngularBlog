@@ -33,6 +33,7 @@
     "@scullyio/scully-plugin-playwright": "^2.1.41",
     "fast-xml-parser": "^3.17.4",
     "ngx-markdown": "^13.1.0",
+    "playwright": "^1.27.1",
     "rxjs": "^7.1.0",
     "sharp": "^0.30.5",
     "tslib": "^2.0.0",
