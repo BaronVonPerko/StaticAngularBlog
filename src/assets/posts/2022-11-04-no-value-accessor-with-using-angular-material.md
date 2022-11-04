@@ -1,7 +1,7 @@
 ---
 date: 2022-11-04
 title: No Value Accessor Error With Angular Material
-image: angular-shield.jpg
+image: angular-shield.png
 categories: angular
 tags: angular,bug,fix
 ---
