@@ -8,14 +8,14 @@ import {
 import { SearchService } from 'src/app/services/search.service';
 import Post from 'src/app/models/post';
 import { mergeMap, Observable, toArray } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { CommonModule, DatePipe } from '@angular/common';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, RouterLinkWithHref, DatePipe],
+  imports: [CommonModule, RouterLink, DatePipe],
   template: `
     <div class="absolute inset-x-0 z-20">
       <div class="bg-white shadow overflow-hidden">

@@ -49,8 +49,6 @@ export class BlogArchiveComponent implements OnInit, OnDestroy {
         this.posts$ = this.postService.getLatestPosts().pipe(
           tap((posts) => {
             this.totalPosts = posts.length;
-            console.log('total posts', this.totalPosts);
-            console.log('posts to load', numPostsToLoad);
             if (numPostsToLoad < this.totalPosts) {
               this.hasMore$.next(true);
             } else {

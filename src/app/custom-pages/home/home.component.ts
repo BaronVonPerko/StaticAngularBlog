@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { PageHeadService } from '../../services/page-head.service';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLinkWithHref],
+  imports: [RouterLink],
   template: `
     <div class="">
       <div

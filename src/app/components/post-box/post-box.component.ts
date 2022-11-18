@@ -1,16 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import Post from 'src/app/models/post';
-import { PostService } from 'src/app/services/post.service';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { loadAnimation } from 'src/app/animations/loadAnimation';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TagsListComponent } from '../tags-list/tags-list.component';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-post-box',
   standalone: true,
-  imports: [CommonModule, TagsListComponent, RouterLinkWithHref],
+  imports: [CommonModule, TagsListComponent, RouterLink, NgOptimizedImage],
   animations: [
     trigger('loadingAnimation', [
       transition(':enter', [useAnimation(loadAnimation)]),
@@ -19,7 +18,7 @@ import { RouterLinkWithHref } from '@angular/router';
   template: `
     <div @loadingAnimation *ngIf="post" class="relative bg-gray-800 my-8">
       <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-        <img class="w-full h-full object-cover" [src]="postImage" />
+        <img class="w-full h-full object-cover" [ngSrc]="postImage" width="500" height="300" alt="Post Image" />
       </div>
       <div
         class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
@@ -68,8 +67,6 @@ import { RouterLinkWithHref } from '@angular/router';
 export class PostBoxComponent implements OnInit {
   @Input() post: Post;
   @Input() highlightedTag: string;
-
-  constructor(private postService: PostService) {}
 
   ngOnInit(): void {}
 

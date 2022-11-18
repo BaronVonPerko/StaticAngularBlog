@@ -3,12 +3,12 @@ import CodeTip from 'src/app/models/codetip';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { loadAnimation } from '../../animations/loadAnimation';
 import { CommonModule } from '@angular/common';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-codetip-box',
   standalone: true,
-  imports: [CommonModule, RouterLinkWithHref],
+  imports: [CommonModule, RouterLink],
   animations: [
     trigger('loadingAnimation', [
       transition(':enter', [useAnimation(loadAnimation)]),
@@ -17,7 +17,7 @@ import { RouterLinkWithHref } from '@angular/router';
   template: `
     <div @loadingAnimation *ngIf="codeTip" class="relative bg-gray-800 my-8">
       <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-        <img class="w-full h-full object-cover" [src]="image" />
+        <img class="w-full h-full object-cover" [src]="image" alt="Code Tip" />
       </div>
       <div
         class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
