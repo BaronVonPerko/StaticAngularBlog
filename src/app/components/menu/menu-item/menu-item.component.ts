@@ -2,12 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import Page from 'src/app/models/page';
 import { IconService } from 'src/app/services/icon.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-menu-item',
   standalone: true,
-  imports: [RouterLinkWithHref],
+  imports: [RouterLink, RouterLinkActive],
   template: `
     <a
       [routerLink]="page.link"

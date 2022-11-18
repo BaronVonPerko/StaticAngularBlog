@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import Post from 'src/app/models/post';
 import { CommonModule } from '@angular/common';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tags-list',
   standalone: true,
-  imports: [CommonModule, RouterLinkWithHref],
+  imports: [CommonModule, RouterLink],
   template: `
     <div class="shrink-0 flex">
       <a
