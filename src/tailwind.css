@@ -39,6 +39,10 @@ h2 {
     max-height: 500px;
 }
 
+.content code {
+  @apply bg-indigo-200;
+}
+
 .page-content img {
     @apply max-w-sm;
 }
