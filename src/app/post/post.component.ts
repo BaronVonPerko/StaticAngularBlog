@@ -21,9 +21,14 @@ import { UtterancesDirective } from '../directives/utterances.directive';
   ],
   template: `
     <div class="content" *ngIf="post$ | async; let post">
-      <h1 class="text-indigo-600">
-        <div class="mb-2">{{ post.title }}</div>
+
+      <div class="flex justify-between">
         <app-tags-list [post]="post"></app-tags-list>
+        <div class="mb-2 text-indigo-900">{{post.date | date: 'longDate'}}</div>
+      </div>
+
+      <h1 class="text-indigo-600 mt-4">
+        <div>{{ post.title }}</div>
       </h1>
 
       <markdown class="" [src]="this.postUrl"></markdown>
@@ -40,7 +45,8 @@ export class PostComponent implements OnInit {
     private route: ActivatedRoute,
     private postService: PostService,
     private pageHeadService: PageHeadService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
