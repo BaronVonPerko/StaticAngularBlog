@@ -5,7 +5,7 @@ import Post from '../models/post';
 import { PageHeadService } from '../services/page-head.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TagsListComponent } from '../components/tags-list/tags-list.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { UtterancesDirective } from '../directives/utterances.directive';
@@ -17,6 +17,7 @@ import { UtterancesDirective } from '../directives/utterances.directive';
     CommonModule,
     TagsListComponent,
     MarkdownModule,
+    NgOptimizedImage,
     UtterancesDirective,
   ],
   template: `
@@ -31,6 +32,8 @@ import { UtterancesDirective } from '../directives/utterances.directive';
         <div>{{ post.title }}</div>
       </h1>
 
+      <img [ngSrc]="postImgUrl" class="w-full" width="500" height="400" alt="Post Featured Image" />
+
       <markdown class="" [src]="this.postUrl"></markdown>
 
       <div [appUtterances]="post.title"></div>
@@ -40,6 +43,7 @@ import { UtterancesDirective } from '../directives/utterances.directive';
 export class PostComponent implements OnInit {
   post$: Observable<Post>;
   postUrl: string;
+  postImgUrl: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,6 +57,7 @@ export class PostComponent implements OnInit {
       this.post$ = this.postService.getPostDetails(params.title).pipe(
         tap((post) => {
           this.postUrl = `/_assets/posts/${post.link}.md`;
+          this.postImgUrl = `/assets/images/${post.image}`;
           this.pageHeadService.setTitle(post.title);
           this.pageHeadService.setOpenGraphTags(
             post.title,
