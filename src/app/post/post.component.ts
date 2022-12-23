@@ -50,14 +50,13 @@ export class PostComponent {
     tap(() => this.postImgUrl = null),
     switchMap(({title}) => this.#postService.getPostDetails(title)),
     delay(0),
-    tap({
-      next: ({link, image, title}) => {
+    tap(({link, image, title}) => {
         this.postUrl = `/_assets/posts/${link}.md`;
         this.postImgUrl = `/assets/images/${image}`;
         this.#pageHeadService.setTitle(title);
         this.#pageHeadService.setOpenGraphTags(title, image, `/blog/post/${link}`);
         this.#pageHeadService.setTwitterCardData(title, image);
       }
-    })
+    ),
   );
 }
