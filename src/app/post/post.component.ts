@@ -40,6 +40,9 @@ import { UtterancesDirective } from '../directives/utterances.directive';
 })
 export class PostComponent {
   #pageHeadService = inject(PageHeadService);
+  postUrl: string;
+  postImgUrl: string;
+
   post$ = inject(PostService).postDetails.pipe(
     tap({
       next: ({link, image, title}) => {
@@ -51,7 +54,4 @@ export class PostComponent {
       }
     })
   );
-
-  postUrl: string;
-  postImgUrl: string;
 }
