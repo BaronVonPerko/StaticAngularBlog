@@ -1,15 +1,14 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { default as Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
-import { mergeMap, Observable, of, switchMap } from 'rxjs';
+import { mergeMap, Observable, of } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 export class PostService {
-  postDetails: Observable<Post> = inject(ActivatedRoute).params.pipe(
-    switchMap(({title}) => of(Posts.Posts.filter(post => post.link === title)[0] as Post))
-  );
+  getPostDetails(title: string): Observable<Post> {
+    return of(Posts.Posts.filter(post => post.link === title)[0] as Post);
+  }
 
   getLatestPosts(): Observable<Post[]> {
     const sortedPosts = Posts.Posts.sort((a: Post, b: Post) => {

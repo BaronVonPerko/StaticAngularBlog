@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { PageHeadService } from '../services/page-head.service';
-import { tap } from 'rxjs/operators';
+import { delay, switchMap, tap } from 'rxjs/operators';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TagsListComponent } from '../components/tags-list/tags-list.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { UtterancesDirective } from '../directives/utterances.directive';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -30,7 +31,7 @@ import { UtterancesDirective } from '../directives/utterances.directive';
         <div>{{ post.title }}</div>
       </h1>
 
-      <img [ngSrc]="postImgUrl" class="w-full" width="500" height="400" alt="Post Featured Image"/>
+      <img *ngIf="postImgUrl" [ngSrc]="postImgUrl" class="w-full" width="500" height="400" alt="Post Featured Image"/>
 
       <markdown class="" [src]="this.postUrl"></markdown>
 
@@ -40,10 +41,15 @@ import { UtterancesDirective } from '../directives/utterances.directive';
 })
 export class PostComponent {
   #pageHeadService = inject(PageHeadService);
+  #postService = inject(PostService);
   postUrl: string;
   postImgUrl: string;
 
-  post$ = inject(PostService).postDetails.pipe(
+  // tap and delay are a hack until this is resolved: https://github.com/angular/angular/issues/47813
+  post$ = inject(ActivatedRoute).params.pipe(
+    tap(() => this.postImgUrl = null),
+    switchMap(({title}) => this.#postService.getPostDetails(title)),
+    delay(0),
     tap({
       next: ({link, image, title}) => {
         this.postUrl = `/_assets/posts/${link}.md`;
