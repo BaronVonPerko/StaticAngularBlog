@@ -11,6 +11,7 @@ import { PostBoxComponent } from '../../components/post-box/post-box.component';
   selector: 'app-blog-archive',
   standalone: true,
   imports: [CommonModule, PostBoxComponent],
+  providers: [PostService],
   template: `
     <ng-container *ngIf="posts$ | async; let posts">
       <h1 class="text-indigo-600">Latest Posts</h1>
