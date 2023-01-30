@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 import { default as Posts } from '../../_assets/posts/posts.json';
 import Post from '../models/post.js';
 import { mergeMap, Observable, of } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class PostService {
-
-  constructor() {
+  getPostDetails(title: string): Observable<Post> {
+    return of(Posts.Posts.filter(post => post.link === title)[0] as Post);
   }
 
   getLatestPosts(): Observable<Post[]> {
@@ -27,11 +25,5 @@ export class PostService {
       mergeMap(p => p),
       filter(post => post.tags?.indexOf(tag) > -1)
     );
-  }
-
-  getPostDetails(link: string): Observable<Post> {
-    return new Observable(subscriber => {
-      subscriber.next(Posts.Posts.filter(post => post.link === link)[0]);
-    });
   }
 }
