@@ -127,4 +127,5 @@ ngOnInit()
 You could of course create interfaces for these types to clean up the `map` a bit.  Depending on how complicated
 your type is, it might make more sense to do so.
 
-Do you have any suggestions to make this even better?  Let me know in the comments below!
+Do you have any suggestions to make this even better?  Let me know in the comments below!  In case you want to see a
+live example, [check out this StackBlitz I created!](https://stackblitz.com/edit/rxjs-vebzbk?devtoolsheight=60&file=index.ts)
