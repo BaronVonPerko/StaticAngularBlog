@@ -134,6 +134,14 @@ export class MenuComponent implements OnInit {
       icon: 'md-collection',
     };
 
+    const talksPage: Page = {
+      inMenu: true,
+      link: '/talks',
+      title: 'Talks',
+      menuTitle: 'Talks',
+      icon: 'md-megaphone',
+    };
+
     const portfolioPage: Page = {
       inMenu: true,
       link: '/portfolio',
@@ -162,6 +170,7 @@ export class MenuComponent implements OnInit {
       map((pages) => {
         return [
           blogPage,
+          talksPage,
           codeTipsArchivePage,
           portfolioPage,
           customizerUiPage,
