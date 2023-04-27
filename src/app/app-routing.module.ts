@@ -10,10 +10,12 @@ import { WpcuiComponent } from './custom-pages/wpcui/wpcui.component';
 import { CodeTipsArchiveComponent } from './custom-pages/code-tips-archive/code-tips-archive.component';
 import { CodetipComponent } from './codetip/codetip.component';
 import { ResumeComponent } from './custom-pages/resume/resume.component';
+import { TalksArchiveComponent } from './custom-pages/talks-archive/talks-archive.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'talks', component: TalksArchiveComponent },
   { path: 'wpcui', component: WpcuiComponent },
   { path: 'blog', component: BlogArchiveComponent },
   { path: 'blog/tag/:tag', component: TagArchiveComponent },
@@ -25,9 +27,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(appRoutes, {}),
-  ],
+  imports: [RouterModule.forRoot(appRoutes, {})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
