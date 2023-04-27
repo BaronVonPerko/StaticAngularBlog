@@ -6,4 +6,5 @@ export default class Post {
   image?: string;
   categories?: string;
   tags?: string;
+  hide?: boolean;
 }

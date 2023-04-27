@@ -56,6 +56,7 @@ export class BlogArchiveComponent implements OnInit, OnDestroy {
               this.hasMore$.next(false);
             }
           }),
+          map((posts) => posts.filter((p) => !p.hide)),
           map((posts) => posts.slice(0, numPostsToLoad)),
           tap((_) => (this.numPostsDisplayed = numPostsToLoad))
         );
